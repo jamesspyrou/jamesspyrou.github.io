@@ -1,1 +1,3 @@
-# jamesspyrou.github.io
+James Spyrou 
+Melbourne, Australia 
+Neuroscientist
