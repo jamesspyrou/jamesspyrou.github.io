@@ -1,8 +1,6 @@
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "James Spyrou's Webpage"
-title_separator          : "-"
+title                    : "James Spyrou"
 name                     : &name "James Spyrou"
-description              : &description "Neuroscientist"
-url                      : https://jamesspyrou.github.io
-repository               : "jamesspyrou/jamesspyrou.github.io"
+description              : &description "The personal webpage of Australian neuroscientist and researcher James Spyrou."
+url                      : https://jamesspyrou.github.io/
