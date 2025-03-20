@@ -1,5 +1,4 @@
-# James Spyrou  
-Melbourne, Australia  
+*Melbourne, Australia*  
 \
 I am a researcher at The Florey Institute of Neuroscience and Mental Health and The University of Melbourne Faculty of Medicine, Dentistry and Health Sciences, as a part of Professor Christopher Reid's Neurophysiology of Excitable Networks Laboratory.  
 \
