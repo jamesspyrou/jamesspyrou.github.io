@@ -1,1 +1,13 @@
-
+html
+{
+background: url('../files/ebg.png') repeat scroll 0 0 #ececec;
+}
+#form_container
+{
+	background:#ffffff;
+	border: none;
+	border-radius: 10px;
+	margin: 0 auto;
+	width:45em;
+	padding-top: 2em;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
