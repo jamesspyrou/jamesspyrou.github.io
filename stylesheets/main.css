@@ -1,6 +1,6 @@
 html
 {
-background: url('../files/bg.bmp') repeat scroll 0 0 #ececec;
+background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
 }
 #form_container
 {
@@ -10,4 +10,5 @@ background: url('../files/bg.bmp') repeat scroll 0 0 #ececec;
 	margin: 0 auto;
 	width:45em;
 	padding-top: 2em;
+
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
