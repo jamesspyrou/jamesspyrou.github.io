@@ -33,21 +33,19 @@
 </head>
 <body>
   <p id="top">
-    <b>James Spyrou</b>
-</br><i>Melbourne, Australia</i>
- </p>
-  <p>
-       <div style="text-align:center;"><img src="files/jam.jpg" id="photo"/> <img src="files/neur1.jpg" id="photo";/> <img src="files/neur2.jpg" id="photo";/> <img src="files/neur3.jpg" id="photo";/></div>
-    </p>
+    <b>James Spyrou</b></br>
+	<i>Melbourne, Australia</i>
+  </p>
+  <p><div style="text-align:center;"><img src="files/jam.jpg" id="photo"/> <img src="files/neur1.jpg" id="photo";/> <img src="files/neur2.jpg" id="photo";/> <img src="files/neur3.jpg" id="photo";/></div>
+  </p>
   <main><p>
-    <section id="bio"></section>
-    <section id="publications"></section>
-    <section id="awards"></section>
-    <section id="presentations"></section>
+    <section id="bio"></section></br>
+    <section id="publications"></section></br>
+    <section id="awards"></section></br>
+    <section id="presentations"></section></br>
   </p></main>
   <script>
     const sections = ["bio", "publications", "awards", "presentations"];
-
     sections.forEach(section => {
       fetch(`sections/${section}.html`)
         .then(response => response.text())
@@ -57,7 +55,7 @@
         .catch(err => console.error(`Error loading ${section}:`, err));
     });
   </script>
-	<div style="text-align:center;font-size:14px;">Website &copy;<span id="copyright"><script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> James Spyrou</br></div>
+	<div style="text-align:center;">Website &copy;<span id="copyright"><script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> James Spyrou</br></div>
 	</br></br>
 </body>
 </div>
