@@ -1,50 +1,33 @@
 <!DOCTYPE html>
 <html>
-<div id="form_container">
+
 <head>
   <title>James Spyrou's Personal Website</title>
   <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
-  <style>
-    body {
-      font-family: "Times New Roman"; 
-      color: #000000; 
-    padding-top: 6em;
-	padding-bottom: 6em;
-      }
-      p {
-        text-align: justify;
-        margin: auto;
-      max-width: 48em;
-      margin-bottom: 2em;
-      }
-      #photo {
-      width: 186px;
-      height: 186px;
-      }
-    a {
-      color: blue; 
-      text-decoration: underline;
-    }
-    img {
-      border: 1px solid black; 
-    }
-  </style>
 </head>
 <body>
-  <p id="top">
-    <b>James Spyrou</b></br>
-	<i>Melbourne, Australia</i>
-  </p>
-  <p><div style="text-align:center;"><img src="files/jam.jpg" id="photo"/> <img src="files/neur1.jpg" id="photo";/> <img src="files/neur2.jpg" id="photo";/> <img src="files/neur3.jpg" id="photo";/></div>
-  </p>
-  <main><p>
-    <section id="bio"></section></br>
-    <section id="publications"></section></br>
-    <section id="awards"></section></br>
-    <section id="presentations"></section></br>
-  </p></main>
-  <script>
+<div id="form_container">
+	<p id="top">
+		<b>James Spyrou</b></br>
+		<i>Melbourne, Australia</i>
+	</p>
+	<p>
+		<div style="text-align:center;">
+			<img src="files/jam.jpg"/> 
+			<img src="files/neur1.jpg"/> 
+			<img src="files/neur2.jpg"/> 
+			<img src="files/neur3.jpg"/>
+		</div>
+	</p>
+ <main>
+	<p>
+		<section id="bio"></section></br>
+		<section id="publications"></section></br>
+		<section id="awards"></section></br>
+		<section id="presentations"></section></br>
+	</p>
+	<script>
     const sections = ["bio", "publications", "awards", "presentations"];
     sections.forEach(section => {
       fetch(`sections/${section}.html`)
@@ -54,9 +37,12 @@
         })
         .catch(err => console.error(`Error loading ${section}:`, err));
     });
-  </script>
-	<div style="text-align:center;">Website &copy;<span id="copyright"><script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> James Spyrou</br></div>
-	</br></br>
-</body>
+	</script>
+  </main>
+		<div id="copyright">
+			Website &copy;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+			James Spyrou
+		</div>
 </div>
+</body>
 </html>

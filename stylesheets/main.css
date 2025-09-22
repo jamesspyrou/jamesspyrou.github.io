@@ -1,7 +1,28 @@
 html
 {
-background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
+	  background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
 }
+    body {
+      font-family: "Times New Roman", serif; 
+	  font-size: 1em;
+      color: #000000; 
+      padding-top: 6em;
+	  padding-bottom: 6em;
+    }
+    p {
+      text-align: justify;
+      margin: auto;
+      max-width: 48em;
+      margin-bottom: 1.5em;
+    }
+    a {
+      color: blue; 
+      text-decoration: underline;
+    }
+    img {
+      border: 1px solid black; 
+	  max-width: 186px; 
+      }
 #form_container
 {
 	background:#ffffff;
@@ -10,7 +31,12 @@ background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
 	margin: 0 auto;
 	width:52em;
 	padding-top: 2em;
-
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-
-
+}
+#copyright
+{
+	margin-top: 0em;
+	text-align: center;
+	padding-bottom: 3em;
+	font-size: 0.9em;
+}
