@@ -30,7 +30,7 @@ img.icon {
 #form_container
 {
 	background:#ffffff;
-	border: none;
+	border: 1px solid gray;
 	margin: 0 auto;
 	width:52em;
 	padding-top: 2em;
