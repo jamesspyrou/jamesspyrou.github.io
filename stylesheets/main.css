@@ -23,11 +23,14 @@ html
       border: 1px solid black; 
 	  max-width: 186px; 
       }
+img.icon {
+    position: relative;
+    top: 1px;
+}
 #form_container
 {
 	background:#ffffff;
 	border: none;
-	border-radius: 10px;
 	margin: 0 auto;
 	width:52em;
 	padding-top: 2em;
@@ -35,7 +38,7 @@ html
 }
 #copyright
 {
-	margin-top: 0em;
+	margin-top: -1em;
 	text-align: center;
 	font-size: 0.9em;
 }
