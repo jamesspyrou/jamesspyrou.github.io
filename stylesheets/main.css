@@ -19,7 +19,7 @@ html
       color: blue; 
       text-decoration: underline;
     }
-    img {
+.photo {
       border: 1px solid black; 
 	  max-width: 186px; 
       }
@@ -37,6 +37,10 @@ html
 {
 	margin-top: 0em;
 	text-align: center;
-	padding-bottom: 3em;
 	font-size: 0.9em;
+}
+#end
+{
+	text-align: center;
+	padding-bottom: 3em;
 }
