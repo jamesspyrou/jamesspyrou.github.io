@@ -2,20 +2,20 @@ html
 {
 	  background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
 }
-    body {
+body {
       font-family: "Times New Roman", serif; 
 	  font-size: 1em;
       color: #000000; 
       padding-top: 6em;
 	  padding-bottom: 6em;
     }
-    p {
+p {
       text-align: justify;
       margin: auto;
       max-width: 48em;
       margin-bottom: 1.5em;
     }
-    a {
+a {
       color: blue; 
       text-decoration: underline;
     }
@@ -36,9 +36,9 @@ img.icon {
 	padding-top: 2em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
-#copyright
+#year
 {
-	margin-top: -1em;
+	margin-top: 0em;
 	text-align: center;
 	font-size: 0.9em;
 }
