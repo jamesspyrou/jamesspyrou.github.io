@@ -1,34 +1,32 @@
-html
-{
-	  background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
-}
+html {
+	background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
+	}
 body {
-      font-family: "Times New Roman", serif; 
-	  font-size: 1em;
-      color: #000000; 
-      padding-top: 6em;
-	  padding-bottom: 6em;
+	font-family: "Times New Roman", serif; 
+	font-size: 1em;
+	color: #000000; 
+	padding-top: 6em;
+	padding-bottom: 6em;
     }
 p {
-      text-align: justify;
-      margin: auto;
-      max-width: 48em;
-      margin-bottom: 1.5em;
+	text-align: justify;
+	margin: auto;
+	max-width: 48em;
+	margin-bottom: 1.5em;
     }
 a {
-      color: blue; 
-      text-decoration: underline;
+	color: blue; 
+	text-decoration: underline;
     }
 .photo {
-      border: 1px solid black; 
-	  max-width: 186px; 
-      }
+	border: 1px solid black; 
+	max-width: 186px; 
+    }
 img.icon {
-    position: relative;
-    top: 1px;
-}
-#form_container
-{
+	position: relative;
+	top: 1px;
+	}
+#form_container {
 	background:#ffffff;
 	border: 1px solid gray;
 	margin: 0 auto;
@@ -36,14 +34,12 @@ img.icon {
 	padding-top: 2em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
-#year
-{
+#year {
 	margin-top: 0em;
 	text-align: center;
 	font-size: 0.9em;
 }
-#end
-{
+#end {
 	text-align: center;
 	margin-top: 0.5em;
 	padding-bottom: 2.5em;
