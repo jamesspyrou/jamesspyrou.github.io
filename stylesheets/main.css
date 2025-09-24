@@ -21,6 +21,7 @@ a {
 .photo {
 	border: 1px solid black; 
 	max-width: 186px; 
+	text-align: center; 
     }
 img.icon {
 	position: relative;
