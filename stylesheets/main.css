@@ -25,8 +25,18 @@ img.icon {
 	position: relative;
 	top: 1px;
 	}
-#images { 
-	text-align: center; 
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1%;
+  width: auto; 
+  justify-content: center;
+  margin: 0 2em;
+}
+.image-row img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 #form_container {
 	background:#ffffff;
@@ -47,4 +57,3 @@ img.icon {
 	padding-bottom: 2.5em;
 
 }
-
