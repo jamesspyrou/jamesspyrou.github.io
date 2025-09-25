@@ -18,14 +18,16 @@ a {
 	color: blue; 
 	text-decoration: underline;
     }
-.photo {
+img.photo {
 	border: 1px solid black; 
-	text-align: center; 
     }
 img.icon {
 	position: relative;
 	top: 1px;
 	}
+#images { 
+	text-align: center; 
+}
 #form_container {
 	background:#ffffff;
 	border: 1px solid gray;
@@ -45,3 +47,4 @@ img.icon {
 	padding-bottom: 2.5em;
 
 }
+
