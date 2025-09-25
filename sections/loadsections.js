@@ -25,7 +25,7 @@ function loadSection(section) {
     xhr.open("GET", "sections/" + section + ".html", true);
     xhr.send();
 }
-if (window.attachEvent) { // IE7/8
+if (window.attachEvent) {
     window.attachEvent('onload', function() {
         for (var i = 0; i < sections.length; i++) {
             loadSection(sections[i]);
