@@ -38,6 +38,20 @@ img.icon {
   height: auto;
   display: block;
 }
+.publication {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-left: 3px solid #555;
+}
+.publication .title {
+  font-style: italic;
+}
+button {
+  margin-top: 0.3em;
+  padding: 0.3em 0.6em;
+  font-size: 0.9em;
+  cursor: pointer;
+}
 #form_container {
 	background:#ffffff;
 	border: 1px solid gray;
@@ -55,5 +69,4 @@ img.icon {
 	text-align: center;
 	margin-top: 0.5em;
 	padding-bottom: 2.5em;
-
 }
