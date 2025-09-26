@@ -1,4 +1,4 @@
-var sections = ["images", "bio", "publications", "awards", "presentations"];
+var sections = ["images", "bio", "contact", "publications", "awards", "presentations"];
 function loadSection(section) {
     var xhr = null;
     if (window.XMLHttpRequest) {
