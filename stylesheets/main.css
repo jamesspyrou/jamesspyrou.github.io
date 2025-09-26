@@ -50,41 +50,39 @@ img.icon {
   align-items: flex-start;
 }
 .toc {
-  position: sticky;   /* stays in view but respects layout */
-  top: 20px;
-  flex-shrink: 0;
-  width: 180px;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1em;
-  margin-left: 20px;
-  margin-top: 40px;
-}
+	position: sticky; 
+	top: 2em;
+	flex-shrink: 0;
+	width: 8em;
+	background: #ffffff;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+	padding: 1em;
+	margin-left: 2em;
+	margin-top: 2em;
+	}
 .main {
-  flex: 1;
-  padding: 2em;
-}
+	flex: 1;
+	padding: 2em;
+	}
 .toc h3 {
-      margin-top: 0;
-      font-size: 1em;
-      text-align: center;
+    margin-top: 0;
+    font-size: 1em;
+    text-align: center;
     }
-
 .toc ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     }
 .toc li {
-      margin: 0.5em 0;
+    margin: 0.5em 0;
     }
 .toc a {
-      text-decoration: none;
-      color: #0077cc;
+    text-decoration: none;
+    color: #0077cc;
     }
 .toc a:hover {
-      text-decoration: underline;
+    text-decoration: underline;
     }
 #form_container {
 	background:#ffffff;
