@@ -33,21 +33,21 @@ img.icon {
 	top: 1px;
 	}
 .image-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1%;
-  width: auto; 
-  justify-content: center;
-  margin: 0 2em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1%;
+	width: auto; 
+	justify-content: center;
+	margin: 0 2em;
 }
 .image-row img {
-  width: 100%;
-  height: auto;
-  display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
 .layout {
-  display: flex;
-  align-items: flex-start;
+	display: flex;
+	align-items: flex-start;
 }
 .toc {
 	position: sticky; 
