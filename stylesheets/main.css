@@ -45,22 +45,50 @@ img.icon {
   height: auto;
   display: block;
 }
-.publication {
-  margin-bottom: 1em;
-  padding: 0.5em;
-  border-left: 3px solid #555;
+.layout {
+  display: flex;
+  align-items: flex-start;
 }
-.publication .title {
-  font-style: italic;
+.toc {
+  position: sticky;   /* stays in view but respects layout */
+  top: 20px;
+  flex-shrink: 0;
+  width: 180px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1em;
+  margin-left: 20px;
+  margin-top: 40px;
 }
-button {
-  margin-top: 0.3em;
-  padding: 0.3em 0.6em;
-  font-size: 0.9em;
-  cursor: pointer;
+.main {
+  flex: 1;
+  padding: 2em;
 }
+.toc h3 {
+      margin-top: 0;
+      font-size: 1em;
+      text-align: center;
+    }
+
+.toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+.toc li {
+      margin: 0.5em 0;
+    }
+.toc a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+.toc a:hover {
+      text-decoration: underline;
+    }
 #form_container {
 	background:#ffffff;
+	flex-shrink: 0;
 	border: 1px solid gray;
 	margin: 0 auto;
 	width: 52em;
