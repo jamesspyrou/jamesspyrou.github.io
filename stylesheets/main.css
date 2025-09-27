@@ -45,41 +45,22 @@ img.icon {
 	height: auto;
 	display: block;
 }
-.layout {
-	display: flex;
-	align-items: flex-start;
-}
 .toc {
-	position: sticky; 
-	top: 2em;
-	flex-shrink: 0;
-	width: 8em;
-	background: #ffffff;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-	padding: 1em;
-	margin-left: 2em;
-	margin-top: 2em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 0.1em 1em;
+      z-index: 1000;
 	}
-.main {
-	flex: 1;
-	padding: 2em;
-	}
-.toc h3 {
-    margin-top: 0;
-    font-size: 1em;
-    text-align: center;
-    }
-.toc ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    }
-.toc li {
-    margin: 0.5em 0;
-    }
 .toc a {
     text-decoration: none;
-    color: #0077cc;
     }
 .toc a:hover {
     text-decoration: underline;
