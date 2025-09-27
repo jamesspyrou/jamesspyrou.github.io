@@ -104,3 +104,8 @@ img.icon {
 	text-align: center;
 	padding-bottom: 2.5em;
 }
+@media (max-width: 768px) { 
+	.toc { 
+		display: none; 
+	}
+}
