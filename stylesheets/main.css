@@ -51,11 +51,11 @@ img.icon {
       left: 0;
       width: 100%;
       background: #ffffff;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #cccccc;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: center;
-      gap: 2em;
+      text-align: left; 
+      gap: 3em;
       padding: 0.1em 1em;
       z-index: 1000;
 	}
@@ -77,10 +77,5 @@ img.icon {
 #year {
 	margin-top: 0em;
 	text-align: center;
-	font-size: 0.9em;
-}
-#end {
-	text-align: center;
-	margin-top: 0.5em;
 	padding-bottom: 2.5em;
 }
