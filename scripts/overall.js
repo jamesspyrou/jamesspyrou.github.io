@@ -64,3 +64,19 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => {
   isDragging = false;
 });
+
+window.addEventListener('load', function() {
+    const nav = document.querySelector('.toc');
+    const form = document.querySelector('#form_container');
+    
+    const navRect = nav.getBoundingClientRect();
+    const formRect = form.getBoundingClientRect();
+
+	const buffer = 4; 
+
+    if (navRect.right > formRect.left + buffer) {
+        nav.style.visibility = 'hidden';
+    } else {
+        nav.style.visibility = 'visible';
+    }
+});

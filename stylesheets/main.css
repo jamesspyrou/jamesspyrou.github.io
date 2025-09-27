@@ -83,7 +83,7 @@ img.icon {
   cursor: move;
   user-select: none;
   border-bottom: 1px solid gray;
-  font-size: 0.85em;
+  font-size: 0.8em;
 }
 .navlist {
   flex: 1;
@@ -103,9 +103,4 @@ img.icon {
 	margin-top: 0em;
 	text-align: center;
 	padding-bottom: 2.5em;
-}
-@media (max-width: 1116px) { 
-	.toc { 
-		display: none; 
-	}
 }
