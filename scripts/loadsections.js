@@ -38,3 +38,23 @@ if (window.attachEvent) {
         }
     };
 }
+
+const toc = document.querySelector('.toc');
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+toc.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  offsetX = e.clientX - toc.offsetLeft;
+  offsetY = e.clientY - toc.offsetTop;
+  toc.style.transition = "none";
+});
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    toc.style.left = (e.clientX - offsetX) + "px";
+    toc.style.top = (e.clientY - offsetY) + "px";
+  }
+});
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
