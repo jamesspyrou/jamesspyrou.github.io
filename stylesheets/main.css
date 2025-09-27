@@ -46,17 +46,18 @@ img.icon {
 	display: block;
 }
 .toc {
-      position: fixed;
-      top: 6.5;
-      left: 1em;
-	  height: 8em; 
-      width: 8em;
-      background: #cfe0ff;
-      border: 1px solid #888888;
-      text-align: left; 
-      padding: 1em;
-      display: flex;
-	  cursor: move;
+    position: fixed;
+    top: 6.5;
+    left: 1em;
+	height: 8em; 
+    width: 8em;
+    background: #ffffff;
+    border: 1px solid gray;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    text-align: left; 
+    padding: 1em;
+    display: flex;
+	cursor: move;
 	}
 .toc ul {
     padding-left: 0px;
