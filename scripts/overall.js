@@ -1,4 +1,4 @@
-var sections = ["images", "bio", "contact", "publications", "awards", "presentations"];
+var sections = ["navigation", "images", "bio", "contact", "publications", "awards", "presentations"];
 function loadSection(section) {
     var xhr = null;
     if (window.XMLHttpRequest) {
@@ -40,12 +40,15 @@ if (window.attachEvent) {
 }
 
 const toc = document.querySelector('.toc');
+const titlebar = toc.querySelector('.titlebar');
+console.log(toc, titlebar);
 
 let isDragging = false;
 let offsetX = 0;
 let offsetY = 0;
 
-toc.addEventListener('mousedown', (e) => {
+titlebar.addEventListener('mousedown', (e) => {
+  e.preventDefault();
   isDragging = true;
   offsetX = e.clientX - toc.offsetLeft;
   offsetY = e.clientY - toc.offsetTop;

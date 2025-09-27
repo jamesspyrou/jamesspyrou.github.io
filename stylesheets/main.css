@@ -47,17 +47,17 @@ img.icon {
 }
 .toc {
     position: fixed;
-    top: 6.5;
+    top: 6.5em;
     left: 1em;
-	height: 8em; 
-    width: 8em;
+	height: 11.5em; 
+    width: 9em;
     background: #ffffff;
     border: 1px solid gray;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     text-align: left; 
-    padding: 1em;
+    padding: 0em;
     display: flex;
-	cursor: move;
+	flex-direction: column;
 	}
 .toc ul {
     padding-left: 0px;
@@ -74,6 +74,22 @@ img.icon {
 .toc a:hover {
     text-decoration: underline;
     }
+.titlebar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.1em 0.4em;
+  font-family: Tahoma, Verdana, sans-serif;
+  cursor: move;
+  user-select: none;
+  border-bottom: 1px solid gray;
+  font-size: 0.85em;
+}
+.navlist {
+  flex: 1;
+  padding-top: 0.5em;
+  padding-left: 1em; 
+}
 #form_container {
 	background:#ffffff;
 	flex-shrink: 0;
