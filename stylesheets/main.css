@@ -84,12 +84,12 @@ img.icon {
 	background:#ffffff;
 	border: 1px solid gray;
 	margin: 0 auto;
-	width: 64em;
+	width: 54em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 	display: flex;
 	box-sizing: border-box;
 	padding-right: 1em;
-}
+	}
 #main_container {
       opacity: 0;
     }
@@ -100,13 +100,13 @@ img.icon {
 	margin-top: 0em;
 	text-align: center;
 	padding-bottom: 1em;
-}
+	}
 #top .name {
   color: brown;
   font-size: 1.5em;
   font-weight: bold;
-}
+	}
 #top {
   text-align: left;
   margin: 0 0 1em 0;
-}
+	}
