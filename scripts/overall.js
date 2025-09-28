@@ -1,5 +1,5 @@
 function loadSection(section, btn) {
-      var container = document.getElementById("main-container");
+      var container = document.getElementById("main_container");
       var xhr = new XMLHttpRequest();
 
       xhr.open("GET", "./sections/" + section + ".html", true);
@@ -8,7 +8,7 @@ function loadSection(section, btn) {
           container.classList.remove("show"); 
           container.innerHTML = xhr.responseText;
 
-          var buttons = document.querySelectorAll('.nav-btn');
+          var buttons = document.querySelectorAll('.nav_link');
           for (var i = 0; i < buttons.length; i++) {
             buttons[i].classList.remove('active');
           }
@@ -31,14 +31,14 @@ function loadSection(section, btn) {
       if (!defaultSection) defaultSection = "bio";
       var sectionFromHash = window.location.hash.replace("#", "") || defaultSection;
 
-      var targetBtn = document.querySelector('.nav-btn[onclick*="' + sectionFromHash + '"]');
+      var targetBtn = document.querySelector('.nav_link[onclick*="' + sectionFromHash + '"]');
       loadSection(sectionFromHash, targetBtn);
     }
 
     window.addEventListener("hashchange", function() {
       var section = window.location.hash.replace("#", "");
       if (section) {
-        var targetBtn = document.querySelector('.nav-btn[onclick*="' + section + '"]');
+        var targetBtn = document.querySelector('.nav_link[onclick*="' + section + '"]');
         loadSection(section, targetBtn);
       }
     });

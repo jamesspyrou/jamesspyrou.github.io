@@ -7,18 +7,18 @@ a, btn, button, input, select, button, summary, span > a, li > a {
 html {
 	background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
 	scroll-behavior: smooth;
+	overflow-y: scroll;
 	}
 body {
 	font-family: "Times New Roman", serif; 
 	font-size: 1em;
 	color: #000000; 
-	padding-top: 6em;
-	padding-bottom: 6em;
+	padding-top: 4em;
+	padding-bottom: 4em;
     }
 p {
 	text-align: justify;
 	margin: auto;
-	max-width: 48em;
 	margin-bottom: 1.5em;
     }
 a {
@@ -36,52 +36,77 @@ img.icon {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 1%;
-	width: auto; 
-	justify-content: center;
-	margin: 0 2em;
+	width: 100%;
+	margin-bottom: 2em; 
 }
 .image-row img {
 	width: 100%;
+	max-width: 100%; 
 	height: auto;
 	display: block;
 }
- nav {
-	 margin-left: 2em; 
-      margin-bottom: 1em;
+.nav_link {
+    padding: 0.2em 0.2em;
+    margin-right: 0.5em;
+    cursor: pointer;
+    transition: background;
+	display: block;
+	margin-bottom: 1em;
     }
-.nav-btn {
-      padding: 0.5em 1em;
-      margin-right: 0.5em;
-      border: 1px solid #888;
-      background: #f8f8f8;
-      cursor: pointer;
-      transition: background 0.2s;
+.nav_link.active {
+    background: #0000ff;
+    color: white;
     }
-.nav-btn:hover {
-      background: #ddd;
+.nav_tab { 
+	margin-top: 6em;
+	margin-left: 1em;
+	vertical-align: top; 
+	white-space: nowrap;
+	}
+.nav_tab a {
+    color: #0000cc;
+    text-decoration: none;
     }
-.nav-btn.active {
-      background: #444;
-      color: white;
+.nav_tab a:hover {
+    text-decoration: underline;
     }
+.sidebar {
+	flex: 0 0 8em;
+	padding-right: 1em;
+	}
+.main_tab { 
+	flex: 1 1 auto;
+	min-width: 0;
+	padding: 1em; 
+	vertical-align: top;
+	}
 #form_container {
 	background:#ffffff;
-	flex-shrink: 0;
 	border: 1px solid gray;
 	margin: 0 auto;
-	width: 52em;
-	padding-top: 2em;
+	width: 64em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+	display: flex;
+	box-sizing: border-box;
+	padding-right: 1em;
 }
-#main-container {
+#main_container {
       opacity: 0;
-      transition: opacity 0.3s;
     }
-#main-container.show {
+#main_container.show {
       opacity: 1;
     }
 #year {
 	margin-top: 0em;
 	text-align: center;
-	padding-bottom: 2.5em;
+	padding-bottom: 1em;
+}
+#top .name {
+  color: brown;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#top {
+  text-align: left;
+  margin: 0 0 1em 0;
 }
