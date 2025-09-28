@@ -45,51 +45,26 @@ img.icon {
 	height: auto;
 	display: block;
 }
-.toc {
-    position: fixed;
-    top: 6.5em;
-    left: 1em;
-	height: 11.5em; 
-    width: 9em;
-    background: #ffffff;
-    border: 1px solid gray;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    text-align: left; 
-    padding: 0em;
-    display: flex;
-	flex-direction: column;
-	}
-.toc ul {
-    padding-left: 0px;
-    margin: 0;
-	list-style-type: none; 
+ nav {
+	 margin-left: 2em; 
+      margin-bottom: 1em;
     }
-.toc li {
-    margin: 4px 0;
+.nav-btn {
+      padding: 0.5em 1em;
+      margin-right: 0.5em;
+      border: 1px solid #888;
+      background: #f8f8f8;
+      cursor: pointer;
+      transition: background 0.2s;
     }
-.toc a {
-    color: #0000cc;
-    text-decoration: none;
+.nav-btn:hover {
+      background: #ddd;
     }
-.toc a:hover {
-    text-decoration: underline;
+.nav-btn.active {
+      background: #444;
+      color: white;
+      font-weight: bold;
     }
-.titlebar {
-  background: linear-gradient(to right, #000080, #1084d0);
-  color: #ffffff;
-  font-weight: bold;
-  padding: 0.1em 0.4em;
-  font-family: Tahoma, Verdana, sans-serif;
-  cursor: move;
-  user-select: none;
-  border-bottom: 1px solid gray;
-  font-size: 0.8em;
-}
-.navlist {
-  flex: 1;
-  padding-top: 0.5em;
-  padding-left: 1em; 
-}
 #form_container {
 	background:#ffffff;
 	flex-shrink: 0;
@@ -99,6 +74,13 @@ img.icon {
 	padding-top: 2em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
+#main-container {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+#main-container.show {
+      opacity: 1;
+    }
 #year {
 	margin-top: 0em;
 	text-align: center;

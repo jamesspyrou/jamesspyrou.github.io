@@ -11,33 +11,31 @@
 		<meta name="description" content="The personal website of Australian neuroscientist and researcher James Spyrou.">
 	</head>
 	<body>
-		<nav class="toc">
-			<div class="titlebar">Navigation</div>
-			<div class="navlist">
-				<ul>
-					<li><a href="#bio"><img src="../files/acct.gif" class="icon"/> Bio</a></li>
-					<li><a href="#contact"><img src="../files/mail.gif" class="icon"/> Contact</a></li>
-					<li><a href="#publications"><img src="../files/book.gif" class="icon"/> Publications</a></li>
-					<li><a href="#awards"><img src="../files/draw.gif" class="icon"/> Awards</a></li>
-					<li><a href="#presentations"><img src="../files/desk.gif" class="icon"/> Presentations</a></li>
-					<li><a href="#"><img src="../files/none.gif" class="icon"/> Back to top</a></li>
-				</ul>
-			</div>
-		</nav>
+		
 		<div id="form_container">
 			<p id="top">
 				<font color="Brown" size=+2><b>James Spyrou</b></font></br>
-				Neuroscientist</br>
+				Scientist and researcher in neurodevelopment and epilepsy.</br>
 				<i>Melbourne, Australia</i>
+			</p>
+			<nav>
+				<button class="nav-btn" onclick="loadSection('bio', this)">Bio</button>
+				<button class="nav-btn" onclick="loadSection('publications', this)">Publications</button>
+				<button class="nav-btn" onclick="loadSection('awards', this)">Awards</button>
+				<button class="nav-btn" onclick="loadSection('presentations', this)">Presentations</button>
+				<button class="nav-btn" onclick="loadSection('contact', this)">Contact</button>
+			</nav>
+			<p id="images">
+				<div class="image-row">
+					<img src="../files/james.jpg" class="photo" title="";/> 
+					<img src="../files/neur1.jpg" class="photo" title="";/> 
+					<img src="../files/neur2.jpg" class="photo" title="";/> 
+					<img src="../files/neur3.jpg" class="photo" title="";/>
+				</div>
 			</p>
 			<main>
 				<div id="content">
-					<section id="images"></section>
-					<section id="bio"></section>
-					<section id="contact"></section></br>
-					<section id="publications"></section></br>
-					<section id="awards"></section></br>
-					<section id="presentations"></section></br>
+					<div id="main-container"></div>
 					<script type="text/javascript" src="../scripts/overall.js"></script>
 				</div>
 			</main>
