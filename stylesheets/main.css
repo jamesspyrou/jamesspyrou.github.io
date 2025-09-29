@@ -41,7 +41,7 @@ img.icon {
 }
 .image-row img {
 	width: 100%;
-	max-width: 100%; 
+	max-width: 10.5em; 
 	height: auto;
 	display: block;
 }
