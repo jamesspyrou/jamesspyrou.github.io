@@ -33,14 +33,13 @@ img.icon {
 	top: 1px;
 	}
 .image-row {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 1%;
-	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin-bottom: 2em; 
 }
 .image-row img {
-	width: 100%;
+	width: 24%;
 	max-width: 10.5em; 
 	height: auto;
 	display: block;
