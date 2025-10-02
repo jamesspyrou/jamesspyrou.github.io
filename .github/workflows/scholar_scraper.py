@@ -12,7 +12,7 @@ soup = BeautifulSoup(r.text, "html.parser")
 citations = soup.find_all("td", class_="gsc_rsb_std")[0].text
 
 # Save into citations.json
-with open("citations.json", "w") as f:
+with open("scripts\citations.json", "w") as f:
     json.dump({"citations": citations}, f)
 
 print("Updated citations.json with:", citations)
