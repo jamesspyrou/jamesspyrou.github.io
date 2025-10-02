@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
 
-SCHOLAR_ID = "GQLCniAAAAAJ"  # replace with your ID
+SCHOLAR_ID = "GQLCniAAAAAJ"
 URL = f"https://scholar.google.com/citations?user={SCHOLAR_ID}"
 
 headers = {
@@ -21,7 +22,8 @@ else:
     citations = "N/A"
 
 # Save into citations.json
-with open("scripts\citations.json", "w") as f:
+filepath = os.path.join("scripts", "citations.json")
+with open(filepath, "w") as f:
     json.dump({"citations": citations}, f)
 
 print("Updated citations.json with:", citations)
