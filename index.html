@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>James Spyrou</title>
-		<link type="text/css" rel="stylesheet" href="stylesheets/main.css">
+		<link type="text/css" rel="stylesheet" href="main.css">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
 		<link rel="canonical" href="https://jamesspyrou.github.io/">
 		<meta property="og:locale" content="en_AU">
@@ -15,11 +15,11 @@
 			 <aside class="sidebar">
 				<div class="nav_tab">
 					<b>Navigation</b><br><br>
-					<a href="#bio" class="nav_link" onclick="loadSection('bio', this)">Bio</a>
-					<a href="#publications" class="nav_link" onclick="loadSection('publications', this)">Publications</a>
-					<a href="#awards" class="nav_link" onclick="loadSection('awards', this)">Awards</a>
-					<a href="#presentations" class="nav_link" onclick="loadSection('presentations', this)">Presentations</a>
-					<a href="#contact" class="nav_link" onclick="loadSection('contact', this)">Contact</a>
+					<a href="/index.html" class="nav_link_active">Bio</a>
+					<a href="/publications.html" class="nav_link">Publications</a>
+					<a href="/awards.html" class="nav_link">Awards</a>
+					<a href="/presentations.html" class="nav_link">Presentations</a>
+					<a href="/contact.html" class="nav_link">Contact</a>
 				</div>
 			</aside>
 			<main class="main_tab">
@@ -34,8 +34,15 @@
 					<img src="../files/neur2.jpg" class="photo" alt="">
 					<img src="../files/neur3.jpg" class="photo" alt="">
 				</div>
-				<div id="main_container"></div>
-				<script src="../scripts/overall.js"></script>
+				<div>
+					<p id="bio">
+						<b>Bio</b><br><br>
+						I am a researcher currently undertaking a PhD at The Florey Institute of Neuroscience and Mental Health and The University of Melbourne Faculty of Medicine, Dentistry and Health Sciences, as a part of Professor Christopher Reid's <a href="https://florey.edu.au/research-group/neurophysiology-of-excitable-networks-group/">Neurophysiology of Excitable Networks Laboratory</a>. <br><br>
+						My current work focuses on using the technique of <i>in utero</i> electroporation to model epilepsy-causing brain malformations underpinned by somatic mosaicism. This work has involved collaboration with clinicians and researchers at the Royal Children's Hospital, the Royal Melbourne Hospital, and the Murdoch Children’s Research Institute, and has also included teaching the theory and practice of this technique at the Australasian Course of Advanced Neuroscience (ACAN). Previously, I completed a Master of Science (awarded with Distinction) at the University of Melbourne School of BioSciences on a research project focused on induced pluripotent stem cell metabolism, epigenetics and transcriptomics. I also previously worked as a research assistant as part of a disease modelling, drug discovery and screening project at The Florey in collaboration with the independent venture catalyst BioCurate.<br><br>
+						Across these projects I have developed expertise in various techniques, including mouse surgeries, mouse <i>in vivo</i>, behavioural and pharmacological assays, molecular biology, <i>in vitro</i> electrophysiology, confocal microscopy and image processing, cell culture, bioinformatics, and data processing and analysis using R, Python and MATLAB. I have presented at and received awards for a number of conferences, including the International Congress of Genetics (ICG), Australian Neuroscience Society (ANS), the Federation of European Neuroscience Societies (FENS) and the International Society for Stem Cell Research (ISSCR), and I am a frequent presenter at local and national epilepsy and neurogenetics meetings. <br><br>
+						Please feel free to contact me with any questions or requests, for example if you want a copy of my CV or any of my papers you don't have access to, or if you just want to get in touch. 
+					</p>
+				</div>
 				<div id="year">
 					&copy;<script>document.getElementById('year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
 					James Spyrou<br>
