@@ -1,9 +1,3 @@
-html, body {
-	cursor: url('../files/point.png'), auto !important; font-smooth: never;
-	}
-a, btn, button, input, select, button, summary, span > a, li > a {
-	cursor: url('../files/click.png'), auto !important;
-	}
 html {
 	background: url('../files/bg.bmp') repeat scroll 0 0 #cccccc;
 	scroll-behavior: smooth;
