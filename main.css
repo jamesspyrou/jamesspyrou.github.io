@@ -22,10 +22,6 @@ a {
 img.photo {
 	border: 1px solid black; 
     }
-img.icon {
-	position: relative;
-	top: 1px;
-	}
 .image-row {
 	display: flex;
 	flex-wrap: wrap;
