@@ -1,1 +1,1 @@
-The personal website of Australian neuroscientist and researcher James Spyrou.
+The personal website of Estonian-based Australian neuroscientist and researcher James Spyrou. 
