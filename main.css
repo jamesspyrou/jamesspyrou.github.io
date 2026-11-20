@@ -68,6 +68,8 @@ img.photo {
 .sidebar {
 	flex: 0 0 8em;
 	padding-right: 1em;
+	display: flex; 
+	flex-direction: column; 
 	}
 .main_tab { 
 	flex: 1 1 auto;
@@ -98,4 +100,18 @@ img.photo {
 #top {
   text-align: left;
   margin: 0 0 1em 0;
+	}
+.js .page { 
+	display: none; 
+	}
+.js .page.active { 
+	display: block; 
+	}
+#webamp-dock { 
+	margin-top: auto; 
+	bottom: 0; 
+	}
+#app { 
+	--webamp-shift: -64px; 
+	transform: translateX(var(--webamp-shift)); 
 	}

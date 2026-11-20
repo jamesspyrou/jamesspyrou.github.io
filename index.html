@@ -10,10 +10,6 @@
 		<meta property="og:description" content="The personal website of Australian neuroscientist and researcher James Spyrou.">
 		<meta name="description" content="The personal website of Australian neuroscientist and researcher James Spyrou.">
 		<script>document.documentElement.className += ' js';</script>
-		<style>
-			.js .page { display: none; }
-			.js .page.active { display: block; }
-		</style>
 	</head>
 	<body>
 		<div id="form_container">
@@ -25,6 +21,11 @@
 					<a href="#awards" class="nav_link" data-link="awards">Awards</a>
 					<a href="#presentations" class="nav_link" data-link="presentations">Presentations</a>
 					<a href="#contact" class="nav_link" data-link="contact">Contact</a>
+					<div id="app" style="height: 64vh">
+					</div>
+					<div class="nav_tab" id="webamp-dock">
+						<a href="#" class="nav_link" id="webamp-toggle" role="button" aria-pressed="false" align="bottom">Music player</a>
+					</div>
 				</div>
 			</aside>
 			<main class="main_tab">
@@ -141,6 +142,70 @@
 				</div>
 			</main>
 		</div>
+				<script>
+			/* Webamp: nothing is downloaded or started until the toggle is clicked. */
+			(function () {
+				var BUNDLE = '../files/webamp.bundle.min.js';
+				var toggle = document.getElementById('webamp-toggle');
+				var container = document.getElementById('app');
+				var webamp = null;
+				var loading = false;
+
+				var config = {
+					initialSkin: { 
+					url: '../files/os-8.wsz' 
+					},
+					availableSkins: [
+						{ url: '../files/depthvision.wsz', name: 'DepthVision V2' },
+						{ url: '../files/aqua.wsz', name: 'Mac OSX v1.5 (Aqua)' },
+						{ url: '../files/os-8.wsz', name: 'OS8 AMP' }
+					],
+					initialTracks: [
+						{ metaData: { artist: 'Brother Android', title: 'the stars come out' }, url: '../files/stars.mp3', duration: 186.0 },
+						{ metaData: { artist: 'Junko Shiratsu', title: 'Door Into Summer' }, url: '../files/summer.mp3', duration: 149.0 },
+						{ metaData: { artist: 'Sonic CD OST', title: 'Quartz Quadrant Good Future (JP/EU)' }, url: '../files/quartz.mp3', duration: 159.0 }
+					]
+				};
+
+				function setActive(on) {
+					toggle.className = on ? 'nav_link_active' : 'nav_link';
+					toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+				}
+
+				function loadBundle(cb) {
+					if (window.Webamp) return cb();
+					var s = document.createElement('script');
+					s.src = BUNDLE;
+					s.onload = cb;
+					s.onerror = function () { loading = false; setActive(false); };
+					document.head.appendChild(s);
+				}
+
+				function open() {
+					if (webamp || loading) return;
+					loading = true;
+					setActive(true);
+					loadBundle(function () {
+						webamp = new window.Webamp(config);
+						/* closing the player with its own X button fully shuts it down too */
+						webamp.onClose(close);
+						webamp.renderWhenReady(container).then(function () { loading = false; });
+					});
+				}
+
+				function close() {
+					if (webamp) { webamp.dispose(); webamp = null; }
+					container.innerHTML = '';
+					loading = false;
+					setActive(false);
+				}
+
+				toggle.addEventListener('click', function (e) {
+					e.preventDefault(); /* keep the URL hash (and current page) unchanged */
+					if (webamp) close(); else open();
+				});
+			})();
+		</script>
 		<script>
 			(function () {
 				var DEFAULT = 'bio';
