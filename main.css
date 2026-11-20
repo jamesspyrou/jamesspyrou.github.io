@@ -90,7 +90,9 @@ img.photo {
 #year {
 	margin-top: 0em;
 	text-align: center;
-	padding-bottom: 1em;
+	padding-bottom: 1em; 
+	font-size: 0.9em; 
+	font-style: italic; 
 	}
 #top .name {
   color: brown;
@@ -109,14 +111,14 @@ img.photo {
 	}
 #webamp-dock { 
 	margin-top: auto; 
-	bottom: 0; 
 	}
 #app { 
 	--webamp-shift: -64px; 
-	transform: translateX(var(--webamp-shift)); 
+	--webamp-shift-vert: 180px; 
+	transform: translate(var(--webamp-shift), var(--webamp-shift-vert));
 	}
 #webamp-toggle {
-	color: rgba(0,0,255,0.15) !important;
+	color: rgba(0,0,255,0.2) !important;
 	}
 #webamp-toggle.nav_link_active {
 	color: rgba(255,255,255,1.0) !important;

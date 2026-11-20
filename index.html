@@ -22,19 +22,18 @@
 					<a href="#awards" class="nav_link" data-link="awards">Awards</a>
 					<a href="#presentations" class="nav_link" data-link="presentations">Presentations</a>
 					<a href="#contact" class="nav_link" data-link="contact">Contact</a>
-					<div id="app" style="height: 64vh">
+					<div id="app">
 					</div>
-					<div class="nav_tab" id="webamp-dock">
-						<a href="#" class="nav_link" id="webamp-toggle" role="button" aria-pressed="false">Music player</a>
-					</div>
+				</div>
+				<div class="nav_tab" id="webamp-dock">
+					<a href="#" class="nav_link" id="webamp-toggle" role="button" aria-pressed="false">Music player</a>
 				</div>
 			</aside>
 			<main class="main_tab">
 				<p id="top">
 					<span class="name">James Spyrou</span><br>
 					Neuroscience • Neuropharmacology • Precision and Nanomedicine<br> 
-					<img src="../files/ee.png" alt=""> <i>Tartu, Estonia</i><br> 
-					<img src="../files/au.png" alt=""> <i>Melbourne, Australia</i>
+					<img src="../files/au.png" alt=""> <i>Melbourne, Australia</i> → <img src="../files/ee.png" alt=""> <i>Tartu, Estonia</i>					
 				</p>
 				<div class="image-row">
 					<img src="../files/js.jpg" class="photo" alt=""> 
@@ -137,9 +136,10 @@
 					</p>
 				</div>
 				<div id="year">
-					&copy;2025–<script>document.getElementById('year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-					James Spyrou<br>
-					<i><span style="font-size: 0.9em;">This website is best viewed on a desktop browser.</span></i>
+					Text, layout and photographs &copy;2021–<script>document.getElementById('year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+					James Spyrou.<br> 
+					Third-party content belongs to its respective rightsholders.<br> 
+					This website is best viewed on a desktop browser. 
 				</div>
 			</main>
 		</div>
@@ -150,7 +150,6 @@
 				var container = document.getElementById('app');
 				var webamp = null;
 				var loading = false;
-
 				var config = {
 					initialSkin: { 
 					url: '../files/os-8.wsz' 
@@ -166,12 +165,10 @@
 						{ metaData: { artist: 'Sonic CD OST', title: 'Quartz Quadrant Good Future (JP/EU)' }, url: '../files/quartz.mp3', duration: 159.0 }
 					]
 				};
-
 				function setActive(on) {
 					toggle.className = on ? 'nav_link_active' : 'nav_link';
 					toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
 				}
-
 				function loadBundle(cb) {
 					if (window.Webamp) return cb();
 					var s = document.createElement('script');
@@ -180,7 +177,6 @@
 					s.onerror = function () { loading = false; setActive(false); };
 					document.head.appendChild(s);
 				}
-
 				function open() {
 					if (webamp || loading) return;
 					loading = true;
@@ -191,14 +187,12 @@
 						webamp.renderWhenReady(container).then(function () { loading = false; });
 					});
 				}
-
 				function close() {
 					if (webamp) { webamp.dispose(); webamp = null; }
 					container.innerHTML = '';
 					loading = false;
 					setActive(false);
 				}
-
 				toggle.addEventListener('click', function (e) {
 					e.preventDefault(); 
 					if (webamp) close(); else open();
@@ -210,12 +204,10 @@
 				var DEFAULT = 'bio';
 				var pages = document.querySelectorAll('.page');
 				var links = document.querySelectorAll('[data-link]');
-
 				function show() {
 					var id = location.hash.slice(1);
 					var valid = Array.prototype.some.call(pages, function (p) { return p.getAttribute('data-page') === id; });
 					if (!valid) id = DEFAULT;
-
 					Array.prototype.forEach.call(pages, function (p) {
 						p.classList.toggle('active', p.getAttribute('data-page') === id);
 					});
@@ -224,7 +216,6 @@
 					});
 					window.scrollTo(0, 0);
 				}
-
 				window.addEventListener('hashchange', show);
 				show();
 			})();
