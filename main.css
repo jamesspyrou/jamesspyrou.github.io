@@ -118,3 +118,6 @@ img.photo {
 #webamp-toggle {
 	color: rgba(0,0,255,0.1) !important;
 	}
+#webamp-toggle.nav_link_active {
+	color: rgba(255,255,255,1);
+	}
