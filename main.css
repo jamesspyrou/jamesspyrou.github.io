@@ -115,6 +115,6 @@ img.photo {
 	--webamp-shift: -64px; 
 	transform: translateX(var(--webamp-shift)); 
 	}
-#webamp-toggle.nav_link_active {
+#webamp-toggle {
 	color: rgba(0,0,255,0.1) !important;
 	}
