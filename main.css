@@ -181,7 +181,10 @@ img.photo {
 		height: auto;
 	}
 	#top .subtitle { 
-		font-size: 0.7em; 
+		font-size: 0.5em; 
+	}
+	#top .location { 
+		font-size: 0.9em; 
 	}
 	#year { 
 		font-size: 0.7em; 
