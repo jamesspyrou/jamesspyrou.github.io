@@ -127,10 +127,14 @@ img.photo {
 	body {
 		padding-top: 3em;
 		padding-bottom: 1em;
+		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; 
 	}
 	p { 
 		text-align: left; 
 	}
+	.page p { 
+		font-size: 0.9em; 
+	}  
 	.sidebar {
 		position: fixed;
 		top: 0;
@@ -181,7 +185,7 @@ img.photo {
 		height: auto;
 	}
 	#top .subtitle { 
-		font-size: 0.5em; 
+		font-size: 0.6em; 
 	}
 	#top .location { 
 		font-size: 0.9em; 
