@@ -177,6 +177,7 @@ img.photo {
 	.image-row {
 		flex-wrap: nowrap;
 		gap: 0.25em;
+		margin-bottom: 1em; 
 	}
 	.image-row img {
 		width: 24%;
@@ -184,11 +185,14 @@ img.photo {
 		min-width: 0;
 		height: auto;
 	}
+	#top .name { 
+		font-family: "Times New Roman", serif; 
+	}
 	#top .subtitle { 
-		font-size: 0.6em; 
+		font-size: 0.7em; 
 	}
 	#top .location { 
-		font-size: 0.9em; 
+		font-size: 0.95em; 
 	}
 	#year { 
 		font-size: 0.7em; 
