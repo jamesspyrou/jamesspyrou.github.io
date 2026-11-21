@@ -175,4 +175,6 @@ img.photo {
 		min-width: 0;
 		height: auto;
 	}
+	#year { font-size: 0.75em; 
+	} 
 }
