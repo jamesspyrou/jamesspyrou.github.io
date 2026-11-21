@@ -149,6 +149,7 @@ img.photo {
 	}
 	.nav_tab {
 		display: flex;
+		justify-content: center; 
 		align-items: center;
 		gap: 0.5em;
 		margin: 0;
@@ -177,7 +178,7 @@ img.photo {
 	.image-row {
 		flex-wrap: nowrap;
 		gap: 0.25em;
-		margin-bottom: 1.1em; 
+		margin-bottom: 1.2em; 
 	}
 	.image-row img {
 		width: 24%;
