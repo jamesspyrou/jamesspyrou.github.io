@@ -20,17 +20,9 @@ The following files are excluded from proprietary copyright claims and remain go
    License: MIT License (https://raw.githubusercontent.com/captbaritone/webamp/refs/heads/master/LICENSE.txt) 
 
 ----------------------------------------------------------------------
-4. Webamp / Winamp Classic Skins (*.wsz) 
-   - ../files/aqua.wsz ("Mac OS X 1.5 (Aqua)") 
-     Creator: DeeLight (http://deelight.smartftp.com/ | deelight@smartftp.com) 
-     Status: Community-created freeware Winamp 2.x skin; copyright retained by the original author. Mac OS X / Aqua visual motifs remain trademarks/copyrights of Apple Inc. 
-   - ../files/os-8.wsz ("OS8 AMP v2.55") 
+4. ../files/os-8.wsz (Webamp/Winamp Classic Skin "OS8 AMP v2.55") 
      Creator: DeeLight (DeeLight@FlashMail.com), based on original Winamp 1.9x skin by "The Mad Yeti" 
      Status: Community-created freeware Winamp 2.x skin; copyright retained by the original authors. Mac OS 8 visual motifs remain trademarks/copyrights of Apple Inc. 
-   - ../files/depthvision.wsz ("DEPTHVISION") 
-     Creator: Christian Schönrank / c-specter (Depthvision.net) 
-     Copyright: Copyright (c) 2005 Christian Schönrank. All rights reserved by the original author. 
-     Status: Community-created freeware Winamp 2.x skin; hosted/loaded as third-party interface artwork without claim of ownership. 
 	 
 ----------------------------------------------------------------------
 5. ../files/5 the stars come out.mp3 
