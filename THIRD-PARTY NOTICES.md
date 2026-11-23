@@ -8,7 +8,7 @@ The following files are excluded from proprietary copyright claims and remain go
    Status: Public domain U.S. government work (depicts no NASA insignia, seals, or logos). 
 
 ----------------------------------------------------------------------
-2. Country Flag Icons (files/au.png, files/ee.png) 
+2. Country Flag Icons (../files/au.png, ../files/ee.png) 
    Project: FAMFAMFAM Flag Icons (https://github.com/markjames/famfamfam-flag-icons) 
    Creator: Mark James 
    Status: Public domain ("free for any use, attribution appreciated but not required"). 
@@ -21,19 +21,19 @@ The following files are excluded from proprietary copyright claims and remain go
 
 ----------------------------------------------------------------------
 4. Webamp / Winamp Classic Skins (*.wsz) 
-   - aqua.wsz ("Mac OS X 1.5 (Aqua)") 
+   - ../files/aqua.wsz ("Mac OS X 1.5 (Aqua)") 
      Creator: DeeLight (http://deelight.smartftp.com/ | deelight@smartftp.com) 
      Status: Community-created freeware Winamp 2.x skin; copyright retained by the original author. Mac OS X / Aqua visual motifs remain trademarks/copyrights of Apple Inc. 
-   - os-8.wsz ("OS8 AMP v2.55") 
+   - ../files/os-8.wsz ("OS8 AMP v2.55") 
      Creator: DeeLight (DeeLight@FlashMail.com), based on original Winamp 1.9x skin by "The Mad Yeti" 
      Status: Community-created freeware Winamp 2.x skin; copyright retained by the original authors. Mac OS 8 visual motifs remain trademarks/copyrights of Apple Inc. 
-   - depthvision.wsz ("DEPTHVISION") 
+   - ../files/depthvision.wsz ("DEPTHVISION") 
      Creator: Christian Schönrank / c-specter (Depthvision.net) 
      Copyright: Copyright (c) 2005 Christian Schönrank. All rights reserved by the original author. 
      Status: Community-created freeware Winamp 2.x skin; hosted/loaded as third-party interface artwork without claim of ownership. 
 	 
 ----------------------------------------------------------------------
-5. ../files/stars.mp3 
+5. ../files/5 the stars come out.mp3 
 	Webamp Audio Track ("The Stars Come Out") 
 	Artist: Brother Android (Harrison Lemke) 
 	Album / Label: October November December (Flowerpot Records, released May 3, 2019) 
