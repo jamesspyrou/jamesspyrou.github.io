@@ -30,7 +30,6 @@ img.photo {
 }
 .image-row img {
 	width: 24%;
-	max-width: 10.5em; 
 	height: auto;
 	display: block;
 }
