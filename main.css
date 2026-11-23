@@ -30,6 +30,7 @@ img.photo {
 }
 .image-row img {
 	width: 24%;
+	max-width: 11.5em; 
 	height: auto;
 	display: block;
 }
@@ -99,15 +100,13 @@ img.photo {
 #form_container {
 	background:#ffffff;
 	border: 1px solid gray;
-	margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 	width: 54em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 	display: flex;
 	box-sizing: border-box;
-	padding-right: 1em; 
-	filter: none; 
-	isolation: auto; 
-	transform: none; 
+	padding: 0 1em; 
 	}
 #year {
 	margin-top: 0em;
