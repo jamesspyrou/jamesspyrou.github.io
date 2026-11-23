@@ -27,6 +27,7 @@
 				</div>
 			</aside>
 			<main class="main_tab">
+				<div id="app"></div>
 				<p id="top">
 					<span class="name">James Spyrou</span><br>
 					<span class="subtitle">Neuroscience • Neuropharmacology • Precision and Nanomedicine</span><br> 
@@ -145,13 +146,12 @@
 				<div id="year">
 					Website design, text, code and photographs &copy; 2021–<span id="copyright-year">2026</span> James Spyrou. All rights reserved.<br> 
 					Third-party content belongs to its respective rightsholders.
-					<p id="music-attribution" hidden>
+					<div id="music-attribution" hidden>
 						Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" target="_blank" rel="noopener">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.
-					</p>
+					</div>
 				</div>
 			</main>
 		</div>
-		<div id="app"></div>
 		<script>
 			document.getElementById('copyright-year').textContent = new Date().getFullYear();
 		</script>
@@ -176,7 +176,14 @@
 					],
 					initialTracks: [
 						{ metaData: { artist: 'Brother Android', title: 'the stars come out' }, url: '../files/5 the stars come out.mp3', duration: 186.0 } 
-					]
+					],
+					windowLayout: {
+						main: {
+							position: { top: 0, left: 0 },
+							shadeMode: true,
+							closed: false
+						}
+					}
 				};
 				function setActive(on) {
 					toggle.className = on ? 'nav_link_active' : 'nav_link';
@@ -200,6 +207,18 @@
 						webamp.renderWhenReady(container).then(function () {
 							loading = false;
 							attribution.hidden = false;
+							webamp.store.dispatch({
+								type: 'CLOSE_WINDOW',
+								windowId: 'playlist'
+							});
+							webamp.store.dispatch({
+								type: 'CLOSE_WINDOW',
+								windowId: 'equalizer'
+							});
+							webamp.store.dispatch({
+								type: 'TOGGLE_REPEAT'
+							});
+							webamp.play();
 						}).catch(function () {
 							close();
 						});
