@@ -158,6 +158,8 @@ img.photo {
 	body {
 		padding-top: 3em;
 		padding-bottom: 1em;
+		padding-left: 4px;
+        padding-right: 4px;
 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; 
 	}
 	p { 
