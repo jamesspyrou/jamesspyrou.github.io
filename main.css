@@ -173,8 +173,7 @@ img.photo {
 	} 
 	#form_container {
     width: calc(100% - 0.5em);
-    margin: 0 auto;
-    padding-right: 0;
+    margin: 0 auto; 
     box-sizing: border-box;
 	}
 	.nav_tab .nav_link,
