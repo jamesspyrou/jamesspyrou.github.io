@@ -17,7 +17,7 @@ The following files are excluded from proprietary copyright claims and remain go
 3. ../files/webamp.bundle.min.js 
    Project: Webamp (https://github.com/captbaritone/webamp) 
    Copyright (c) 2015 Jordan Eldredge, with bundled sub-dependencies including classnames (Copyright (c) 2017 Jed Watson). 
-   License: MIT License 
+   License: MIT License (https://raw.githubusercontent.com/captbaritone/webamp/refs/heads/master/LICENSE.txt) 
 
 ----------------------------------------------------------------------
 4. Webamp / Winamp Classic Skins (*.wsz) 
