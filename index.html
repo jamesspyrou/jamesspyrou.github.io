@@ -143,13 +143,18 @@
 					</p>
 				</div>
 				<div id="year">
-					Website design, text, code and photographs &copy; 2021–<script>document.getElementById('year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-					James Spyrou. All rights reserved.<br> 
+					Website design, text, code and photographs &copy; 2021–<span id="copyright-year">2026</span> James Spyrou. All rights reserved.<br> 
 					Third-party content belongs to its respective rightsholders.
+					<p id="music-attribution" hidden>
+						Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" target="_blank" rel="noopener">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.
+					</p>
 				</div>
 			</main>
 		</div>
 		<div id="app"></div>
+		<script>
+			document.getElementById('copyright-year').textContent = new Date().getFullYear();
+		</script>
 		<script>
 			(function () {
 				var BUNDLE = '../files/webamp.bundle.min.js';
@@ -157,6 +162,9 @@
 				var container = document.getElementById('app');
 				var webamp = null;
 				var loading = false;
+				var toggle = document.getElementById('webamp-toggle');
+				var container = document.getElementById('app');
+				var attribution = document.getElementById('music-attribution');
 				var config = {
 					initialSkin: { 
 					url: '../files/os-8.wsz' 
@@ -167,7 +175,7 @@
 						{ url: '../files/os-8.wsz', name: 'OS8 AMP' }
 					],
 					initialTracks: [
-						{ metaData: { artist: 'Brother Android', title: 'the stars come out' }, url: '../files/stars.mp3', duration: 186.0 } 
+						{ metaData: { artist: 'Brother Android', title: 'the stars come out' }, url: '../files/5 the stars come out.mp3', duration: 186.0 } 
 					]
 				};
 				function setActive(on) {
@@ -189,15 +197,24 @@
 					loadBundle(function () {
 						webamp = new window.Webamp(config);
 						webamp.onClose(close);
-						webamp.renderWhenReady(container).then(function () { loading = false; });
+						webamp.renderWhenReady(container).then(function () {
+							loading = false;
+							attribution.hidden = false;
+						}).catch(function () {
+							close();
+						});
 					});
 				}
 				function close() {
-					if (webamp) { webamp.dispose(); webamp = null; }
-					container.innerHTML = '';
-					loading = false;
-					setActive(false);
-				}
+    if (webamp) {
+        webamp.dispose();
+        webamp = null;
+    }
+    container.innerHTML = '';
+    loading = false;
+    setActive(false);
+    attribution.hidden = true;
+}
 				toggle.addEventListener('click', function (e) {
 					e.preventDefault(); 
 					if (webamp) close(); else open();

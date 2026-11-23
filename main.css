@@ -134,13 +134,17 @@ img.photo {
 	margin-top: auto; 
 	}
 #app { 
-    position: fixed; 
+    position: absolute;
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
     z-index: 10000;  
 }
+#music-attribution {
+    text-align: center;
+}
 #webamp {
+    position: fixed !important;
     z-index: 999999 !important;
 }
 #webamp-toggle {
