@@ -223,15 +223,15 @@
 					});
 				}
 				function close() {
-    if (webamp) {
-        webamp.dispose();
-        webamp = null;
-    }
-    container.innerHTML = '';
-    loading = false;
-    setActive(false);
-    attribution.hidden = true;
-}
+					if (webamp) {
+						webamp.dispose();
+						webamp = null;
+					}
+					container.innerHTML = '';
+					loading = false;
+					setActive(false);
+					attribution.hidden = true;
+				}
 				toggle.addEventListener('click', function (e) {
 					e.preventDefault(); 
 					if (webamp) close(); else open();

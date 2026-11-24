@@ -96,7 +96,7 @@ img.photo {
 	padding: 1em; 
 	vertical-align: top;
 	position: relative; 
-	}
+}
 #form_container {
 	background:#ffffff;
 	border: 1px solid gray;
@@ -107,23 +107,23 @@ img.photo {
 	display: flex;
 	box-sizing: border-box;
 	padding: 0 1em; 
-	}
+}
 #year {
 	margin-top: 0em;
 	text-align: center;
 	padding-bottom: 1em; 
 	font-size: 0.9em; 
 	font-style: italic; 
-	}
+}
 #top .name {
-  color: brown;
-  font-size: 1.5em;
-  font-weight: bold;
-	}
+	color: brown;
+	font-size: 1.5em;
+	font-weight: bold;
+}
 #top {
-  text-align: left;
-  margin: 0 0 1em 0;
-	}
+	text-align: left;
+	margin: 0 0 1em 0;
+}
 .license-link {
     color: #000000;
     text-decoration: none;
@@ -133,10 +133,10 @@ img.photo {
 	}
 .js .page.active { 
 	display: block; 
-	}
+}
 #webamp-dock { 
 	margin-top: auto; 
-	}
+}
 #app {
     position: absolute;
     top: 0;
@@ -150,10 +150,10 @@ img.photo {
 }
 #webamp-toggle {
 	color: rgba(0,0,255,0.18) !important;
-	}
+}
 #webamp-toggle.nav_link_active {
 	color: rgba(255,255,255,1.0) !important;
-	}
+}
 @media (max-width: 700px) {
 	body {
 		padding-top: 3em;
@@ -174,42 +174,41 @@ img.photo {
 		display: none; 
 	} 
 	#form_container {
-    width: calc(100% - 0.5em);
-    margin-left: 0;
-        margin-right: 0;
-        padding-left: 0.25em;
-        padding-right: 0.25em;
+		width: calc(100% - 0.5em);
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0.25em;
+		padding-right: 0.25em;
 		box-sizing: border-box;
 		position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	.nav_tab .nav_link,
     .nav_tab .nav_link_active {
         font-size: 0.85em;
-}
+	}
 	.main_tab {
 		padding-left: 0.5em;
         padding-right: 0.5em;
 	} 
-.image-row {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.15em;
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-    margin-bottom: 1.2em;
-}
-
-.image-row img {
-    flex: 1 1 0;
-    width: 0;
-    min-width: 0;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+	.image-row {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 0.15em;
+		width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
+		margin-bottom: 1.2em;
+	}
+	.image-row img {
+		flex: 1 1 0;
+		width: 0;
+		min-width: 0;
+		max-width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
 	#top .name { 
 		font-family: "Times New Roman", serif; 
 	}
