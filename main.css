@@ -162,17 +162,6 @@ img.photo {
         padding-right: 0;
 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; 
 	}
-	#form_container {
-        outline: 3px solid red;
-    }
-
-    .main_tab {
-        outline: 2px solid blue;
-    }
-
-    .image-row {
-        outline: 2px solid green;
-	}
 	p { 
 		text-align: left; 
 	}
@@ -186,14 +175,19 @@ img.photo {
 	} 
 	#form_container {
     width: calc(100% - 0.5em);
-    margin: 0 0; 
-    box-sizing: border-box;
+    margin-left: 0;
+        margin-right: 0;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
 	}
 	.nav_tab .nav_link,
     .nav_tab .nav_link_active {
         font-size: 0.85em;
 }
-	.main_tab { padding: 0.8em; } 
+	.main_tab {
+		padding-left: 0.4em;
+        padding-right: 0.4em;
+	} 
 .image-row {
     display: flex;
     flex-wrap: nowrap;
