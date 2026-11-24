@@ -175,7 +175,7 @@ img.photo {
 	} 
 	#form_container {
     width: calc(100% - 0.5em);
-    margin: 0 auto; 
+    margin: 0 0; 
     box-sizing: border-box;
 	}
 	.nav_tab .nav_link,
