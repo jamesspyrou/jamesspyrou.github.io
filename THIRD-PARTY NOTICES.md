@@ -23,12 +23,24 @@ The following files are excluded from proprietary copyright claims and remain go
 
 ----------------------------------------------------------------------
 4. ../files/os-8.wsz
-	 Webamp/Winamp Classic Skin "OS8 AMP v2.55" 
-     Creator: DeeLight (DeeLight@FlashMail.com), based on original Winamp 1.9x skin by "The Mad Yeti" 
-     Status: Community-created freeware Winamp 2.x skin; copyright retained by the original authors. Mac OS 8 visual motifs remain trademarks/copyrights of Apple Inc. 
-	 
+	Webamp/Winamp Classic Skin "OS8 AMP v2.55" 
+    Creator: DeeLight (DeeLight@FlashMail.com), based on original Winamp 1.9x skin by "The Mad Yeti" 
+    Status: Community-created freeware Winamp 2.x skin; copyright retained by the original authors. Mac OS 8 visual motifs remain trademarks/copyrights of Apple Inc. 
+	
+----------------------------------------------------------------------	
+5. ../files/c64.wsz
+	Webamp/Winamp Classic Skin "Commodore 64" 
+	Description: A Winamp skin styled after the Commodore 64. 
+	Source: https://interglacial.com/pub/winamp_xmms_skins/ 
+	Modification history: 
+		Modified from "Old_X-timey" by sburke (sburke@cpan.org) (2005-11-05). 
+		"Old_X-timey" modified from "XawMMS" by sburke (2005-09-13). 
+		"XawMMS" created by Christopher Allen. 
+		"XawMMS" based on "NeXTAmp2 v1.0pre1" by Jesse Kaufman. 
+	Status: Original authors retain their respective copyrights. No explicit redistribution licence identified. This skin is not affiliated with or endorsed by Commodore. Commodore imagery remain trademarks/copyrights of the Commodore International Corporation, Commodore Corporation B.V., or their affiliates. 
+
 ----------------------------------------------------------------------
-5. ../files/5 the stars come out.mp3 
+6. ../files/5 the stars come out.mp3 
 	Audio Track "The Stars Come Out" 
 	Artist: Brother Android (Harrison Lemke) 
 	Album / Label: October November December (Flowerpot Records, released May 3, 2019) 
