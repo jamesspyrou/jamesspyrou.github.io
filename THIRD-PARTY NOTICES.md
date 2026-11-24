@@ -40,7 +40,18 @@ The following files are excluded from proprietary copyright claims and remain go
 	Status: Original authors retain their respective copyrights. No explicit redistribution license identified. This skin is not affiliated with or endorsed by Commodore. Commodore imagery, motifs and logos remain trademarks/copyrights of the Commodore International Corporation, Commodore Corporation B.V., or their affiliates. 
 
 ----------------------------------------------------------------------
-6. ../files/5 the stars come out.mp3 
+6. ../files/amiamp20.wsz 
+	Webamp/Winamp Classic Skin "AmiAMP" 
+	Description: Amiga-inspired Winamp skin. 
+	Creator: Fredrik Wangel. 
+	Copyright: © 1998-2000 Handcrafted Designs. 
+	Version: 2.09. 
+	Date: August 9, 2000. 
+	Source: https://pcdesktops.emuunlim.com/cgi/preview.pl?name_skin=AmiAMP&author=Fredrik%20Wangel&section=WinAMP 
+	Status: Author-identified freeware skin with an explicit redistribution condition. The original accompanying documentation states that the skin may be redistributed provided that the package is not modified. The original package and its accompanying documentation must therefore remain unchanged. 
+
+----------------------------------------------------------------------
+7. ../files/5 the stars come out.mp3 
 	Audio Track "The Stars Come Out" 
 	Artist: Brother Android (Harrison Lemke) 
 	Album / Label: October November December (Flowerpot Records, released May 3, 2019) 
