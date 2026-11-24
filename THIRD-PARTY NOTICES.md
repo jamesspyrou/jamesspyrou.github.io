@@ -37,7 +37,7 @@ The following files are excluded from proprietary copyright claims and remain go
 		"Old_X-timey" modified from "XawMMS" by sburke (2005-09-13). 
 		"XawMMS" created by Christopher Allen. 
 		"XawMMS" based on "NeXTAmp2 v1.0pre1" by Jesse Kaufman. 
-	Status: Original authors retain their respective copyrights. No explicit redistribution licence identified. This skin is not affiliated with or endorsed by Commodore. Commodore imagery remain trademarks/copyrights of the Commodore International Corporation, Commodore Corporation B.V., or their affiliates. 
+	Status: Original authors retain their respective copyrights. No explicit redistribution license identified. This skin is not affiliated with or endorsed by Commodore. Commodore imagery, motifs and logos remain trademarks/copyrights of the Commodore International Corporation, Commodore Corporation B.V., or their affiliates. 
 
 ----------------------------------------------------------------------
 6. ../files/5 the stars come out.mp3 
