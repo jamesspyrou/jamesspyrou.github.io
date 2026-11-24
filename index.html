@@ -227,8 +227,9 @@
 								type: 'CLOSE_WINDOW',
 								windowId: 'equalizer'
 							});
-							webamp.setVolume(100);
 							webamp.store.dispatch({
+								type: "SET_VOLUME",
+								volume: 100,
 								type: 'TOGGLE_REPEAT'
 							});
 							webamp.play();
