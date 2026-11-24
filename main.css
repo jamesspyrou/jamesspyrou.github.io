@@ -179,14 +179,18 @@ img.photo {
         margin-right: 0;
         padding-left: 0.25em;
         padding-right: 0.25em;
+		box-sizing: border-box;
+		position: relative;
+        left: 50%;
+        transform: translateX(-50%);
 	}
 	.nav_tab .nav_link,
     .nav_tab .nav_link_active {
         font-size: 0.85em;
 }
 	.main_tab {
-		padding-left: 0.4em;
-        padding-right: 0.4em;
+		padding-left: 0.5em;
+        padding-right: 0.5em;
 	} 
 .image-row {
     display: flex;
