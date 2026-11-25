@@ -440,8 +440,7 @@ input[type="reset"].default:not(:disabled):active {
         min-width: 0;
         width: 0;
         padding: 0 2px;
-        font-size: 0.75em;
-		text-decoration: bold; 
+        font-size: 0.70em;
         white-space: nowrap;
         text-align: center;
     }
