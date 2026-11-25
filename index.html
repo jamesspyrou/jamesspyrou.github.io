@@ -223,6 +223,30 @@
 						webamp.renderWhenReady(container).then(function () {
 							loading = false;
 							attribution.hidden = false;
+							
+							// Fix bitmap skin 
+							function applyWebampNativePixels() {
+							const webampEl = document.getElementById('webamp');
+							if (!webampEl) return;
+							const dpr = window.devicePixelRatio || 1;
+							const invScale = 1 / dpr;
+							// Scale the entire Webamp container down so 1 CSS px = 1 hardware px
+							webampEl.style.transformOrigin = 'top left';
+							webampEl.style.transform = `scale(${invScale})`;
+							}
+							// 1. Run after Webamp renders
+							webamp.renderWhenReady(document.getElementById('app')).then(() => {
+							applyWebampNativePixels();
+							});
+							// 2. Re-calculate automatically if dragged to a monitor with different scaling
+							let currentDpr = window.devicePixelRatio;
+							window.addEventListener('resize', () => {
+							if (window.devicePixelRatio !== currentDpr) {
+							currentDpr = window.devicePixelRatio;
+							applyWebampNativePixels();
+							}
+							});
+
 							webamp.store.dispatch({
 								type: 'CLOSE_WINDOW',
 								windowId: 'playlist'

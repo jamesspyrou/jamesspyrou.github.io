@@ -145,6 +145,10 @@ img.photo {
     margin: 0;
 	transform: translate(-122px, 172px); 
 }
+#webamp { 
+	image-rendering: pixelated; 
+	image-rendering: crisp-edges; 
+}
 #music-attribution {
     text-align: center;
 }
