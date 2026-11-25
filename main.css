@@ -426,16 +426,23 @@ input[type="reset"].default:not(:disabled):active {
     .sidebar {
         padding: 2px;
     }
-
+	
     .nav_tab {
-        gap: 0;
+        display: flex;
+        width: 100%;
+        gap: 1px;
+        overflow: hidden;
     }
 
     .nav_link,
     .nav_link_active {
-        min-height: 2em;
-        padding: 0.3em 0.55em;
-        font-size: 0.76em;
+        flex: 1 1 0;
+        min-width: 0;
+        width: 0;
+        padding: 0 2px;
+        font-size: clamp(9px, 2.5vw, 12px);
+        white-space: nowrap;
+        text-align: center;
     }
 
     #app,
