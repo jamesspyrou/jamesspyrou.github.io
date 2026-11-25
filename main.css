@@ -10,6 +10,44 @@
     --document-white: #ffffff;
     --text: #000000;
     --link: #0000cc;
+	
+		
+	--element-spacing: 8px;
+	--grouped-button-spacing: 4px;
+	--surface: #c0c0c0;
+	--button-highlight: #ffffff;
+	--button-face: #dfdfdf;
+	--button-shadow: #808080;
+	--window-frame: #0a0a0a;
+	--dialog-blue: #000080;
+	--dialog-blue-light: #1084d0;
+	--dialog-gray: #808080;
+	--dialog-gray-light: #b5b5b5;
+	--border-width: 1px;
+	--border-raised-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-highlight);
+	--border-raised-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+	--border-sunken-outer: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--window-frame);
+	--border-sunken-inner: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
+	--default-button-border-raised-outer: inset -2px -2px var(--window-frame), inset 1px 1px var(--window-frame);
+	--default-button-border-raised-inner: inset 2px 2px var(--button-highlight), inset -3px -3px var(--button-shadow), inset 3px 3px var(--button-face);
+	--default-button-border-sunken-outer: inset 2px 2px var(--window-frame), inset -1px -1px var(--window-frame);
+	--default-button-border-sunken-inner: inset -2px -2px var(--button-highlight), inset 3px 3px var(--button-shadow), inset -3px -3px var(--button-face);
+	--border-window-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-face);
+	--border-window-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
+	--border-field: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--window-frame);
+	--border-status-field: inset -1px -1px var(--button-face), inset 1px 1px var(--button-shadow);
+	--border-tab: inset -1px 0 var(--window-frame),
+    inset 1px 1px var(--button-face),
+    inset -2px 0 var(--button-shadow),
+    inset 2px 2px var(--button-highlight)
 }
 
 * {
@@ -58,10 +96,6 @@ img.photo {
     border: 1px solid #000000;
 }
 
-/* --------------------------------------------------
-   APPLICATION WINDOW
--------------------------------------------------- */
-
 #form_container {
     display: flex;
     flex-direction: column;
@@ -69,75 +103,107 @@ img.photo {
     max-width: calc(100% - 2em);
     min-height: 30em;
     margin: 0 auto;
-    padding: 0;
+    padding: 3px;
     box-sizing: border-box;
-    background: var(--window-face);
-    border: 2px solid;
-    border-color: var(--window-white) var(--window-dark) var(--window-dark) var(--window-white);
-    box-shadow: 2px 2px 0 #000000;
+	box-shadow: var(--border-window-outer), var(--border-window-inner);
+	background: var(--surface);
 }
 
-/* --------------------------------------------------
-   TITLE BAR
--------------------------------------------------- */
-
-.window-titlebar {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: 0.4em;
-    min-height: 1.65em;
-    padding: 2px 3px;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 0.9em;
-    font-weight: bold;
-    background: linear-gradient(90deg, var(--title-blue) 0%, var(--title-blue) 40%, var(--title-blue-light) 100%);
-    user-select: none;
+button,
+input[type="submit"],
+input[type="reset"] {
+	box-sizing: border-box;
+	border: none;
+	color: transparent;
+	text-shadow: 0 0 var(--text-color);
+	background: var(--surface);
+	box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+	border-radius: 0;
+	min-width: 75px;
+	min-height: 23px;
+	padding: 0 12px;
 }
 
-.window-icon {
-    display: block;
-    flex: 0 0 16px;
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
+button.default,
+input[type="submit"].default,
+input[type="reset"].default {
+	box-shadow: var(--default-button-border-raised-outer), var(--default-button-border-raised-inner);
 }
 
-.window-title {
-    flex: 1 1 auto;
-    min-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+button:not(:disabled):active,
+input[type="submit"]:not(:disabled):active,
+input[type="reset"]:not(:disabled):active {
+	box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+	text-shadow: 1px 1px var(--text-color);
 }
 
-.window-controls {
-    display: flex;
-    flex: 0 0 auto;
-    gap: 2px;
-    margin-left: 4px;
+button.default:not(:disabled):active,
+input[type="submit"].default:not(:disabled):active,
+input[type="reset"].default:not(:disabled):active {
+	box-shadow: var(--default-button-border-sunken-outer), var(--default-button-border-sunken-inner);
 }
 
-.window-control {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.25em;
-    height: 1.15em;
-    background: var(--window-face);
-    color: #000000;
-    font-family: Arial, sans-serif;
-    font-size: 0.9em;
-    font-weight: bold;
-    line-height: 1;
-    border: 1px solid;
-    border-color: var(--window-white) var(--window-dark) var(--window-dark) var(--window-white);
+.title-bar {
+  background: linear-gradient(
+    90deg,
+    var(--dialog-blue),
+    var(--dialog-blue-light)
+  );
+  padding: 3px 2px 3px 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* --------------------------------------------------
-   NOTEPAD-STYLE MENU BAR / PAGE NAVIGATION
--------------------------------------------------- */
+.title-bar-text {
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0;
+  margin-right: 24px;
+  font-family: Arial, sans-serif; 
+  font-size: 12px; 
+}
+
+.title-bar-controls {
+  display: flex;
+}
+
+.title-bar-controls button {
+  padding: 0;
+  display: block;
+  min-width: 16px;
+  min-height: 14px;
+}
+
+.title-bar-controls button:active {
+  padding: 0;
+}
+
+.title-bar-controls button:focus {
+  outline: none;
+}
+
+.title-bar-controls button[aria-label="Minimize"],
+.title-bar-controls button[aria-label].minimize {
+  background-image: url("../files/minimize.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 3px left 4px;
+}
+
+.title-bar-controls button[aria-label="Maximize"],
+.title-bar-controls button[aria-label].maximize {
+  background-image: url("../files/maximize.svg");
+  background-repeat: no-repeat;
+  background-position: top 2px left 3px;
+}
+
+.title-bar-controls button[aria-label="Close"],
+.title-bar-controls button[aria-label].close {
+  margin-left: 2px;
+  background-image: url("../files/close.svg");
+  background-repeat: no-repeat;
+  background-position: top 3px left 4px;
+}
 
 .sidebar {
     display: flex;
@@ -207,19 +273,13 @@ img.photo {
     background: #d4d4d4;
 }
 
-/* Music Player is a separate menu-bar command, aligned to the right. */
 #webamp-toggle {
-    margin-left: auto;
+    color: transparent !important; 
 }
 
-#webamp-toggle.active {
-    background: #b8b8b8;
-    border-color: #404040 #ffffff #ffffff #404040;
+#webamp-toggle.nav_link_active {
+	color: #000000 !important;
 }
-
-/* --------------------------------------------------
-   WINDOW CONTENT / RECESSED DOCUMENT AREA
--------------------------------------------------- */
 
 .main_tab {
     position: relative;
@@ -243,8 +303,6 @@ img.photo {
 .js .page.active {
     display: block;
 }
-
-/* About page header */
 
 #top {
     margin: 0 0 1em;
@@ -271,8 +329,6 @@ img.photo {
     vertical-align: middle;
 }
 
-/* About-only four-image row */
-
 .image-row {
     display: flex;
     flex-wrap: nowrap;
@@ -292,8 +348,6 @@ img.photo {
     object-fit: cover;
 }
 
-/* Page headings and content */
-
 .page > p:first-child,
 .page > h2:first-child {
     margin-top: 0;
@@ -312,39 +366,6 @@ img.photo {
     line-height: 1.45;
 }
 
-.publication-list {
-    margin: 0;
-    padding-left: 1.7em;
-}
-
-.publication-list li {
-    margin-bottom: 1.1em;
-    padding-left: 0.2em;
-    line-height: 1.45;
-}
-
-.education-entry,
-.presentation-entry {
-    margin: 0 0 1.25em;
-    padding: 0 0 0.8em;
-    border-bottom: 1px solid #dddddd;
-    line-height: 1.45;
-}
-
-.education-entry small,
-.presentation-entry small {
-    display: inline-block;
-    margin-top: 0.35em;
-    font-size: 0.9em;
-}
-
-.presentation-entry p {
-    margin: 0.35em 0;
-    text-align: left;
-}
-
-/* Copyright and attribution, retained at the end of the content area. */
-
 #year {
     margin: 2em 0 0;
     padding: 1em 0 0;
@@ -357,7 +378,11 @@ img.photo {
 }
 
 .license-link {
-    color: #000000;
+    color: #555555;
+    text-decoration: none;
+}
+.license-link:visited {
+    color: #555555;
     text-decoration: none;
 }
 
@@ -366,44 +391,19 @@ img.photo {
     text-align: center;
 }
 
-/* --------------------------------------------------
-   STATUS BAR
--------------------------------------------------- */
-
-.window-statusbar {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
-    min-height: 1.55em;
-    padding: 2px 4px;
-    background: var(--window-face);
-    color: #000000;
-    font-family: Arial, sans-serif;
-    font-size: 0.72em;
-    border-top: 1px solid #ffffff;
+.status-bar {
+	margin: 0px 1px;
+	display: flex;
+	gap: 1px;
 }
 
-.window-statusbar span {
-    flex: 1 1 auto;
-    min-width: 0;
-    padding: 1px 0.45em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    border: 1px solid;
-    border-color: #808080 #ffffff #ffffff #808080;
+.status-bar-field {
+	box-shadow: var(--border-status-field);
+	flex-grow: 1;
+	padding: 2px 3px;
+	margin: 0;
+	font-size: 12px; 
 }
-
-.window-statusbar .status-right {
-    flex: 0 1 auto;
-    text-align: right;
-}
-
-/* --------------------------------------------------
-   WEBAMP
--------------------------------------------------- */
 
 #app {
     position: absolute;
@@ -422,10 +422,6 @@ img.photo {
 #music-attribution {
     text-align: center;
 }
-
-/* --------------------------------------------------
-   MOBILE
--------------------------------------------------- */
 
 @media (max-width: 700px) {
     body {
@@ -493,7 +489,7 @@ img.photo {
     }
 
     #top .subtitle {
-        font-size: 0.7em;
+        font-size: 0.70em;
     }
 
     #top .location {
@@ -524,18 +520,5 @@ img.photo {
 
     #year {
         font-size: 0.7em;
-    }
-}
-
-@media (max-width: 380px) {
-    .nav_link,
-    .nav_link_active {
-        padding-right: 0.4em;
-        padding-left: 0.4em;
-        font-size: 0.72em;
-    }
-
-    .window-control {
-        width: 1.15em;
     }
 }

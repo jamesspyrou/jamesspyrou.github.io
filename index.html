@@ -17,15 +17,14 @@
 	</head>
 	<body>
 		<div id="form_container">
-			<header class="window-titlebar">
-				<img alt="" class="window-icon" src="favicon.ico?v=2"/>
-				<span class="window-title">James Spyrou - <span id="page-title">About</span></span>
-				<div aria-hidden="true" class="window-controls">
-					<span class="window-control minimise">_</span>
-					<span class="window-control maximise">&square;</span>
-					<span class="window-control close">&times;</span>
+			<div class="title-bar">
+				<div class="title-bar-text">James Spyrou - <span id="page-title">About</span></div>
+				<div class="title-bar-controls">
+					<button aria-label="Minimize"></button>
+					<button aria-label="Maximize"></button>
+					<button aria-label="Close">	</button>
 				</div>
-			</header>
+			</div>
 			<nav aria-label="Main navigation" class="sidebar">
 				<div class="nav_tab">
 					<a aria-current="page" class="nav_link_active" data-link="bio" href="#bio">About</a>
@@ -158,16 +157,15 @@
 				</div>
 				<div id="year">
 					Website design, text, code and photographs &copy; 2021&ndash;<span id="copyright-year">2026</span> James Spyrou. <a class="license-link" href="../LICENSE.md">All rights reserved.</a><br/>
-					<a class="license-link" href="../THIRD-PARTY-NOTICES.md">Third-party content</a> belongs to its respective rightsholders.
-					<div hidden="" id="music-attribution">
-						Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" rel="noopener" target="_blank">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">CC BY-NC-SA 4.0</a>.
-					</div>
+					<a class="license-link" href="../THIRD-PARTY NOTICES.md">Third-party content</a> belongs to its respective rightsholders.
+					<span hidden="" id="music-attribution"><br>Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" rel="noopener" target="_blank">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">CC BY-NC-SA 4.0</a>.</span>
 				</div>
 			</main>
-			<footer class="window-statusbar">
-				<span id="window-status">Ready</span>
-				<span class="status-right">James Spyrou</span>
-			</footer>
+			<div class="status-bar">
+				<div class="status-bar-field">Ready</div>
+				<div class="status-bar-field"> </div>
+				<div class="status-bar-field"> </div>
+			</div>
 		</div>
 		<script>
 			document.getElementById('copyright-year').textContent = new Date().getFullYear();
@@ -183,14 +181,32 @@
 				var container = document.getElementById('app');
 				var attribution = document.getElementById('music-attribution');
 				var config = {
-					initialSkin: {
-						url: '../files/os-8.wsz'
+					initialSkin: { 
+					url: '../files/amiamp20.wsz' 
 					},
 					availableSkins: [
-						{ url: '../files/os-8.wsz', name: 'OS8 AMP' }
+						{ 
+							url: '../files/os-8.wsz', 
+							name: 'OS8 AMP' 
+						},
+						{ 
+							url: '../files/c64.wsz', 
+							name: 'Commodore 64' 
+						},
+						{ 
+							url: '../files/amiamp20.wsz', 
+							name: 'AmiAMP' 
+						}
+						
 					],
 					initialTracks: [
-						{ metaData: { artist: 'Brother Android', title: 'the stars come out' }, url: '../files/5 the stars come out.mp3', duration: 186.0 }
+						{ metaData: { 
+							artist: 'Brother Android', 
+							title: 'the stars come out' 
+						}, 
+						url: '../files/5 the stars come out.mp3', 
+						duration: 186.0 
+						} 
 					],
 					windowLayout: {
 						main: {
@@ -231,6 +247,10 @@
 								windowId: 'equalizer'
 							});
 							webamp.store.dispatch({
+								type: "SET_VOLUME",
+								volume: 100
+							});							
+							webamp.store.dispatch({
 								type: 'TOGGLE_REPEAT'
 							});
 							webamp.play();
@@ -250,7 +270,7 @@
 					attribution.hidden = true;
 				}
 				toggle.addEventListener('click', function (e) {
-					e.preventDefault();
+					e.preventDefault(); 
 					if (webamp) close(); else open();
 				});
 			})();
