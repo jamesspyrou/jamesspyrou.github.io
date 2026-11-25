@@ -1,228 +1,541 @@
+:root {
+    --desktop-texture: url('../files/texture.gif');
+    --window-face: #c0c0c0;
+    --window-white: #ffffff;
+    --window-light: #dfdfdf;
+    --window-mid: #808080;
+    --window-dark: #404040;
+    --title-blue: #000080;
+    --title-blue-light: #0080c0;
+    --document-white: #ffffff;
+    --text: #000000;
+    --link: #0000cc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html {
-	background: url('../files/texture.gif') repeat scroll 0 0 #cccccc;
-	scroll-behavior: smooth;
-	overflow-y: scroll;
-	}
+    min-height: 100%;
+    background: var(--desktop-texture) repeat scroll 0 0 #0080c0;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
 body {
-	font-family: "Times New Roman", serif; 
-	font-size: 1em;
-	color: #000000; 
-	padding-top: 3.5em;
-	padding-bottom: 4em;
-    }
-p {
-	text-align: justify;
-	margin: auto;
-	margin-bottom: 1.5em;
-    }
+    min-height: 100vh;
+    margin: 0;
+    padding: 1.5em 0 2em;
+    color: var(--text);
+    font-family: "Times New Roman", serif;
+    font-size: 1em;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
 a {
-	color: blue; 
-	text-decoration: underline;
-    }
-img.photo {
-	border: 1px solid black; 
-    }
-.image-row {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin-bottom: 2em; 
-}
-.image-row img {
-	width: 24%;
-	max-width: 11.5em; 
-	height: auto;
-	display: block;
-}
-.nav_link {
-    padding: 0.2em 0.2em;
-    margin: 0;
-    cursor: pointer;
-    transition: background;
-    display: block;
-}
-.nav_tab {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em;
-    margin: 0;
-    padding: 0.6em 0.8em;
-    white-space: nowrap;
-}
-.nav_tab #webamp-toggle {
-    position: absolute;
-    left: 0.75em;
-}
-.nav_tab b,
-.nav_tab br { 
-    display: none;
-}
-.nav_tab a {
-    color: #0000cc;
-    text-decoration: none;
-}
-.nav_tab a:hover {
+    color: blue;
     text-decoration: underline;
 }
-.nav_tab .nav_link,
-.nav_tab .nav_link_active {
-    display: block;
-    margin: 0;
+
+a:visited {
+    color: #551a8b;
 }
-.nav_link_active {
-    padding: 0.2em 0.2em;
-    cursor: pointer;
-    transition: background;
-    background: #0000ff;
-    color: white !important;
+
+p {
+    margin: 0 0 1.25em;
+    text-align: justify;
+    line-height: 1.4;
 }
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 0;
-    background: #ffffff;
-    border-bottom: 1px solid gray;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    overflow-x: auto;
+
+img.photo {
+    border: 1px solid #000000;
 }
-.main_tab { 
-	flex: 1 1 auto;
-	min-width: 0;
-	padding: 1em; 
-	vertical-align: top;
-	position: relative; 
-}
+
+/* --------------------------------------------------
+   APPLICATION WINDOW
+-------------------------------------------------- */
+
 #form_container {
-	background:#ffffff;
-	border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    width: 54em;
+    max-width: calc(100% - 2em);
+    min-height: 30em;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--window-face);
+    border: 2px solid;
+    border-color: var(--window-white) var(--window-dark) var(--window-dark) var(--window-white);
+    box-shadow: 2px 2px 0 #000000;
+}
+
+/* --------------------------------------------------
+   TITLE BAR
+-------------------------------------------------- */
+
+.window-titlebar {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.4em;
+    min-height: 1.65em;
+    padding: 2px 3px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    background: linear-gradient(90deg, var(--title-blue) 0%, var(--title-blue) 40%, var(--title-blue-light) 100%);
+    user-select: none;
+}
+
+.window-icon {
+    display: block;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.window-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.window-controls {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 2px;
+    margin-left: 4px;
+}
+
+.window-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25em;
+    height: 1.15em;
+    background: var(--window-face);
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1;
+    border: 1px solid;
+    border-color: var(--window-white) var(--window-dark) var(--window-dark) var(--window-white);
+}
+
+/* --------------------------------------------------
+   NOTEPAD-STYLE MENU BAR / PAGE NAVIGATION
+-------------------------------------------------- */
+
+.sidebar {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    padding: 2px 4px;
+    background: var(--window-face);
+    border-bottom: 1px solid #808080;
+}
+
+.nav_tab {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1px;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav_tab b,
+.nav_tab br {
+    display: none;
+}
+
+.nav_link,
+.nav_link_active {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.75em;
+    padding: 0.25em 0.7em;
+    color: #000000 !important;
+    background: transparent;
+    border: 1px solid transparent;
+    font-family: Arial, sans-serif;
+    font-size: 0.82em;
+    font-weight: normal;
+    line-height: 1.2;
+    text-decoration: none !important;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.nav_link:hover {
+    background: #d4d4d4;
+    border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+.nav_link:active {
+    background: #b8b8b8;
+    border-color: #404040 #ffffff #ffffff #404040;
+}
+
+.nav_link_active {
+    background: #d4d4d4;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px 0 #a0a0a0;
+}
+
+.nav_link_active:hover {
+    background: #d4d4d4;
+}
+
+/* Music Player is a separate menu-bar command, aligned to the right. */
+#webamp-toggle {
     margin-left: auto;
-    margin-right: auto;
-	width: 54em;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-	display: flex;
-	box-sizing: border-box;
-	padding: 0 1em; 
 }
-#year {
-	margin-top: 0em;
-	text-align: center;
-	padding-bottom: 1em; 
-	font-size: 0.9em; 
-	font-style: italic; 
+
+#webamp-toggle.active {
+    background: #b8b8b8;
+    border-color: #404040 #ffffff #ffffff #404040;
 }
-#top .name {
-	color: brown;
-	font-size: 1.5em;
-	font-weight: bold;
+
+/* --------------------------------------------------
+   WINDOW CONTENT / RECESSED DOCUMENT AREA
+-------------------------------------------------- */
+
+.main_tab {
+    position: relative;
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 20em;
+    margin: 4px;
+    padding: 1em;
+    overflow: auto;
+    background: var(--document-white);
+    border: 1px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    scrollbar-color: #c0c0c0 #eeeeee;
 }
+
+.js .page {
+    display: none;
+}
+
+.js .page.active {
+    display: block;
+}
+
+/* About page header */
+
 #top {
-	text-align: left;
-	margin: 0 0 1em 0;
+    margin: 0 0 1em;
+    text-align: left;
 }
+
+#top .name {
+    color: brown;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#top .subtitle {
+    font-size: 0.9em;
+}
+
+#top .location {
+    font-size: 0.9em;
+}
+
+#top .location img {
+    width: 1.15em;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* About-only four-image row */
+
+.image-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.25em;
+    width: 100%;
+    margin: 0 0 1.5em;
+}
+
+.image-row img {
+    display: block;
+    flex: 1 1 0;
+    width: 24%;
+    max-width: 11.5em;
+    min-width: 0;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Page headings and content */
+
+.page > p:first-child,
+.page > h2:first-child {
+    margin-top: 0;
+}
+
+.page h2 {
+    margin: 0 0 1em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid #c0c0c0;
+    color: #000000;
+    font-family: "Times New Roman", serif;
+    font-size: 1.2em;
+}
+
+.page p {
+    line-height: 1.45;
+}
+
+.publication-list {
+    margin: 0;
+    padding-left: 1.7em;
+}
+
+.publication-list li {
+    margin-bottom: 1.1em;
+    padding-left: 0.2em;
+    line-height: 1.45;
+}
+
+.education-entry,
+.presentation-entry {
+    margin: 0 0 1.25em;
+    padding: 0 0 0.8em;
+    border-bottom: 1px solid #dddddd;
+    line-height: 1.45;
+}
+
+.education-entry small,
+.presentation-entry small {
+    display: inline-block;
+    margin-top: 0.35em;
+    font-size: 0.9em;
+}
+
+.presentation-entry p {
+    margin: 0.35em 0;
+    text-align: left;
+}
+
+/* Copyright and attribution, retained at the end of the content area. */
+
+#year {
+    margin: 2em 0 0;
+    padding: 1em 0 0;
+    border-top: 1px solid #c0c0c0;
+    color: #555555;
+    font-size: 0.8em;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .license-link {
     color: #000000;
     text-decoration: none;
 }
-.js .page { 
-	display: none; 
-	}
-.js .page.active { 
-	display: block; 
+
+#music-attribution {
+    margin-top: 0.5em;
+    text-align: center;
 }
-#webamp-dock { 
-	margin-top: auto; 
+
+/* --------------------------------------------------
+   STATUS BAR
+-------------------------------------------------- */
+
+.window-statusbar {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-height: 1.55em;
+    padding: 2px 4px;
+    background: var(--window-face);
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 0.72em;
+    border-top: 1px solid #ffffff;
 }
+
+.window-statusbar span {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 1px 0.45em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.window-statusbar .status-right {
+    flex: 0 1 auto;
+    text-align: right;
+}
+
+/* --------------------------------------------------
+   WEBAMP
+-------------------------------------------------- */
+
 #app {
     position: absolute;
+    z-index: 5;
     top: 0;
     right: 0;
-    transform: none;
     margin: 0;
-	transform: translate(-122px, 172px); 
+    transform: translate(-122px, 172px);
 }
-#webamp { 
-	image-rendering: pixelated; 
-	image-rendering: crisp-edges; 
+
+#webamp {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
+
 #music-attribution {
     text-align: center;
 }
-#webamp-toggle {
-	color: rgba(0,0,255,0.18) !important;
-}
-#webamp-toggle.nav_link_active {
-	color: rgba(255,255,255,1.0) !important;
-}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
 @media (max-width: 700px) {
-	body {
-		padding-top: 3em;
-		padding-bottom: 1em;
-		padding-left: 0;
-        padding-right: 0;
-		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; 
-	}
-	p { 
-		text-align: left; 
-	}
-	.page p { 
-		font-size: 0.9em; 
-	}  
-	#app,
-	#webamp-dock,
-	#webamp-toggle	{ 
-		display: none; 
-	} 
-	#form_container {
-		width: calc(100% - 0.5em);
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0.25em;
-		padding-right: 0.25em;
-		box-sizing: border-box;
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.nav_tab .nav_link,
-    .nav_tab .nav_link_active {
+    body {
+        padding: 0.5em 0 1em;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    p {
+        text-align: left;
+    }
+
+    #form_container {
+        position: relative;
+        left: 50%;
+        width: calc(100% - 0.5em);
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        transform: translateX(-50%);
+    }
+
+    .window-titlebar {
+        min-height: 1.6em;
         font-size: 0.85em;
-	}
-	.main_tab {
-		padding-left: 0.5em;
-        padding-right: 0.5em;
-	} 
-	.image-row {
-		display: flex;
-		flex-wrap: nowrap;
-		gap: 0.15em;
-		width: 100%;
-		min-width: 0;
-		box-sizing: border-box;
-		margin-bottom: 1.2em;
-	}
-	.image-row img {
-		flex: 1 1 0;
-		width: 0;
-		min-width: 0;
-		max-width: 100%;
-		height: auto;
-		object-fit: cover;
-	}
-	#top .name { 
-		font-family: "Times New Roman", serif; 
-	}
-	#top .subtitle { 
-		font-size: 0.65em; 
-	}
-	#top .location { 
-		font-size: 0.90em; 
-	}
-	#year { 
-		font-size: 0.7em; 
-	} 
+    }
+
+    .sidebar {
+        padding: 2px;
+    }
+
+    .nav_tab {
+        gap: 0;
+    }
+
+    .nav_link,
+    .nav_link_active {
+        min-height: 2em;
+        padding: 0.3em 0.55em;
+        font-size: 0.76em;
+    }
+
+    /* Music Player and its player window are desktop-only. */
+    #app,
+    #webamp-dock,
+    #webamp-toggle {
+        display: none !important;
+    }
+
+    .main_tab {
+        min-height: 0;
+        margin: 3px;
+        padding: 0.7em 0.55em;
+    }
+
+    p {
+        margin-bottom: 1.1em;
+    }
+
+    .page p {
+        font-size: 0.9em;
+    }
+
+    #top .name {
+        font-family: "Times New Roman", serif;
+    }
+
+    #top .subtitle {
+        font-size: 0.75em;
+    }
+
+    #top .location {
+        font-size: 0.8em;
+    }
+
+    .image-row {
+        gap: 0.15em;
+        margin-bottom: 1.2em;
+    }
+
+    .image-row img {
+        flex: 1 1 0;
+        width: 0;
+        min-width: 0;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .page h2 {
+        font-size: 1.05em;
+    }
+
+    .window-statusbar {
+        display: none;
+    }
+
+    #year {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav_link,
+    .nav_link_active {
+        padding-right: 0.4em;
+        padding-left: 0.4em;
+        font-size: 0.72em;
+    }
+
+    .window-control {
+        width: 1.15em;
+    }
 }
