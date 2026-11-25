@@ -488,7 +488,6 @@ input[type="reset"].default:not(:disabled):active {
     .page h2 {
         font-size: 1.05em;
     }
-    }
 
     #year {
         font-size: 0.7em;
