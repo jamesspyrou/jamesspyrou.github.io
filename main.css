@@ -397,7 +397,6 @@ input[type="reset"].default:not(:disabled):active {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
-}
 
 @media (max-width: 700px) {
     body {
