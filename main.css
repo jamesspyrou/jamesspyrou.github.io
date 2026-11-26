@@ -162,6 +162,17 @@ input[type="reset"].default:not(:disabled):active {
 	font-family: "Pixelated MS Sans Serif", Arial, sans-serif; 
 	font-weight: bold;
 	font-size: 11px; 
+	display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#titlebar-icon {
+    width: 16px;
+    height: 16px;
+	position: relative;
+    top: 1px;
+	flex-shrink: 0;
 }
 
 .title-bar-controls {
@@ -438,7 +449,7 @@ input[type="reset"].default:not(:disabled):active {
         font-size: 0.85em;
     }
 
-    .sidebar {
+    .nav_bar {
         padding: 2px;
     }
 	
