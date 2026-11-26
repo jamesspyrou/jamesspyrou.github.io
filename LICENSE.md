@@ -1,6 +1,6 @@
 PROPRIETARY SOFTWARE AND CONTENT LICENSE
 
-Copyright (c) 2021–2026 James Spyrou. All rights reserved unless otherwise noted. 
+Copyright © 2021–2026 James Spyrou. All rights reserved unless otherwise noted. 
 
 1. Ownership  
 All source code, markup, stylesheets, scripts, website design, text, and photographs contained in this repository (collectively, the "Work") are the exclusive property of James Spyrou, unless otherwise noted.  
