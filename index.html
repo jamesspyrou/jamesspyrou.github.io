@@ -32,7 +32,7 @@
 					<a aria-current="false" class="nav_link" data-link="awards" data-icon="files/certificate-1.png" href="#awards">Awards</a>
 					<a aria-current="false" class="nav_link" data-link="presentations" data-icon="files/scienc_4-2.png" href="#presentations">Presentations</a>
 					<a aria-current="false" class="nav_link" data-link="contact" data-icon="files/mailbox_world-2.png" href="#contact">Contact</a>
-					<a aria-label="Toggle music player" aria-pressed="false" class="nav_link" href="#" id="webamp-toggle" role="button">Music player</a>
+					<a aria-label="Toggle music player" aria-pressed="false" class="nav_link2" href="#" id="webamp-toggle" role="button">Music player</a>
 				</div>
 			</nav>
 			<main class="main_tab" id="window-content" tabindex="0">
@@ -45,13 +45,12 @@
 						<span class="location"><img alt="" src="./files/au.png"/> <i>Melbourne, Australia</i> &rarr; <img id="flag-icon" alt="" src="./files/ee.png"/> <i>Tartu, Estonia</i></span>
 					</p>
 					<div class="image-row">
-						<img alt="" class="photo" src="../files/js.jpg"/>
-						<img alt="" class="photo" src="../files/neur1.jpg"/>
-						<img alt="" class="photo" src="../files/neur2.jpg"/>
-						<img alt="" class="photo" src="../files/neur3.jpg"/>
+						<img alt="" class="photo" src="/files/js.jpg"/>
+						<img alt="" class="photo" src="/files/neur1.jpg"/>
+						<img alt="" class="photo" src="/files/neur2.jpg"/>
+						<img alt="" class="photo" src="/files/neur3.jpg"/>
 					</div>
 				</section>
-
 				<div class="page active" data-page="about">
 					<p>
 						<b>About</b><br/><br/>
@@ -156,9 +155,9 @@
 					</p>
 				</div>
 				<div id="year">
-					Original website design, text, code and photographs &copy; 2021&ndash;<span id="copyright-year">2026</span> James Spyrou. <a class="license-link" href="../LICENSE.md">All rights reserved, unless otherwise stated.</a><br/>
-					<a class="license-link" href="../THIRD-PARTY-NOTICES.md">Third-party content</a> belongs to its respective rightsholders.
-					<span hidden="" id="music-attribution"><br>Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" rel="noopener" target="_blank">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">CC BY-NC-SA 4.0</a>.</span>
+					Original website design, text, code and photographs &copy; 2021&ndash;<span id="copyright-year">2026</span> James Spyrou. <a class="license-link" href="/LICENSE.md">All rights reserved, unless otherwise stated.</a><br/>
+					<a class="license-link" href="/THIRD-PARTY-NOTICES.md">Third-party content</a> belongs to its respective rightsholders.
+					<span hidden="" id="music-attribution">Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" rel="noopener" target="_blank">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">CC BY-NC-SA 4.0</a>.</span>
 				</div>
 			</main>
 			<div class="status-bar">
@@ -172,7 +171,7 @@
 		</script>
 		<script>
 			(function () {
-				var BUNDLE = '../files/webamp.bundle.min.js';
+				var BUNDLE = '/files/webamp.bundle.min.js';
 				var toggle = document.getElementById('webamp-toggle');
 				var container = document.getElementById('app');
 				var webamp = null;
@@ -182,19 +181,19 @@
 				var attribution = document.getElementById('music-attribution');
 				var config = {
 					initialSkin: { 
-					url: '../files/amiamp20.wsz' 
+					url: '/files/os-8.wsz' 
 					},
 					availableSkins: [
 						{ 
-							url: '../files/os-8.wsz', 
+							url: '/files/os-8.wsz', 
 							name: 'OS8 AMP' 
 						},
 						{ 
-							url: '../files/c64.wsz', 
+							url: '/files/c64.wsz', 
 							name: 'Commodore 64' 
 						},
 						{ 
-							url: '../files/amiamp20.wsz', 
+							url: '/files/amiamp20.wsz', 
 							name: 'AmiAMP' 
 						}
 						
@@ -204,7 +203,7 @@
 							artist: 'Brother Android', 
 							title: 'the stars come out' 
 						}, 
-						url: '../files/5 the stars come out.mp3', 
+						url: '/files/5 the stars come out.mp3', 
 						duration: 186.0 
 						} 
 					],
