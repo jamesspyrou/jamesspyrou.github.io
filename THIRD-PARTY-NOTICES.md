@@ -3,19 +3,20 @@ THIRD-PARTY NOTICES
 The following files are excluded from proprietary copyright claims and remain governed by their original license terms or public domain status: 
 
 ----------------------------------------------------------------------
-1. 	../files/ms_sans_serif.woff
+1. 	Project: 98.css
+	Adapted code: Portions of the website's CSS relating to window borders, title bars and window buttons. 
+	Pixelated MS Sans Serif font face and window button icons: 
+	../files/ms_sans_serif.woff
 	../files/ms_sans_serif.woff2
 	../files/ms_sans_serif_bold.woff
 	../files/ms_sans_serif_bold.woff2
 	../files/close.svg
 	../files/maximize.svg
 	../files/minimize.svg
-	Pixelated MS Sans Serif font face and window button icons. 
-	Project: 98.css
 	Author: Jordan Scales (jdan)
 	Source: https://github.com/jdan/98.css
 	Licence: MIT License 
-	These files are sourced from the 98.css project, a CSS library for recreating classic Windows 98 user interfaces. Used under the MIT License. 
+	These files and code are sourced from the 98.css project, a CSS library for recreating classic Windows 98 user interfaces. The relevant material is used and modified under the MIT License. The original copyright and permission notice are reproduced below. 
 	```Copyright 2020 Jordan Scales 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
 	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
