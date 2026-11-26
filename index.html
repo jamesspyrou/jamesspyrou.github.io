@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div id="form_container">
-			<div class="title-bar">
+			<div class="title-bar" id="top">
 				<div class="title-bar-text"><img id="titlebar-icon" src="files/homepage-1.png" alt=""> James Spyrou - <span id="page-title">About</span></div>
 				<div class="title-bar-controls">
 					<button aria-label="Minimize"></button>
@@ -39,10 +39,10 @@
 				<div id="app">
 				</div>
 				<section class="profile-header" aria-label="Profile">
-					<p id="top">
+					<p id="info">
 						<span class="name">James Spyrou</span><br/>
 						<span class="subtitle">Neuroscience &bull; Neuropharmacology &bull; Precision and Nanomedicine</span><br/>
-						<span class="location"><img alt="" src="./files/au.png"/> <i>Melbourne, Australia</i> &rarr; <img id="flag-icon" alt="" src="./files/ee.png"/> <i>Tartu, Estonia</i></span>
+						<span class="location"><img alt="" src="./files/au.png"/> Melbourne, Australia &rarr; <img alt="" src="./files/ee.png"/> Tartu, Estonia</span>
 					</p>
 					<div class="image-row">
 						<img alt="" class="photo" src="/files/js.jpg"/>
@@ -155,15 +155,22 @@
 					</p>
 				</div>
 				<div id="year">
-					Original website design, text, code and photographs &copy; 2021&ndash;<span id="copyright-year">2026</span> James Spyrou. <a class="license-link" href="/LICENSE.md">All rights reserved, unless otherwise stated.</a><br/>
+					Original website design, code, text and photographs &copy; 2021&ndash;<span id="copyright-year">2026</span> James Spyrou. <a class="license-link" href="/LICENSE.md">All rights reserved, unless otherwise stated.</a><br/>
 					<a class="license-link" href="/THIRD-PARTY-NOTICES.md">Third-party content</a> belongs to its respective rightsholders.
 					<span hidden="" id="music-attribution">Music: &ldquo;<a href="https://flowerpotrecords.bandcamp.com/track/the-stars-come-out" rel="noopener" target="_blank">The Stars Come Out</a>&rdquo; by Brother Android (Harrison Lemke), <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">CC BY-NC-SA 4.0</a>.</span>
 				</div>
 			</main>
 			<div class="status-bar">
-				<div class="status-bar-field">Ready</div>
-				<div class="status-bar-field"> </div>
-				<div class="status-bar-field"> </div>
+				<div class="status-bar-field">
+					<a href="#top" id="status-back-to-top">Back to top</a>
+				</div>
+				<div class="status-bar-field"></div>
+				<div class="status-bar-field"></div>
+				<div class="status-bar-field"></div>
+				<div class="status-bar-field" id="status-current-page">
+					<img id="status-page-icon" src="files/homepage-1.png" alt="">
+					<span id="status-page-title">About</span>
+				</div>
 			</div>
 		</div>
 		<script>
@@ -288,6 +295,28 @@
 					presentations: 'Presentations',
 					contact: 'Contact'
 				};
+				
+				function updateStatusTab() {
+					const currentPage = location.hash.substring(1) || "about";
+						const currentLink = document.querySelector(
+							`[data-link="${currentPage}"]`
+						);
+
+					if (currentLink) {
+						document.getElementById("status-page-title").textContent =
+						currentLink.textContent.trim();
+					}
+
+					const titlebarIcon = document.getElementById("titlebar-icon");
+					const statusPageIcon = document.getElementById("status-page-icon");
+
+					if (titlebarIcon && statusPageIcon) {
+						statusPageIcon.src = titlebarIcon.src;
+					}
+				};
+
+				window.addEventListener("hashchange", updateStatusTab);
+				window.addEventListener("DOMContentLoaded", updateStatusTab);
 
 				function showPage() {
 					var id = window.location.hash.slice(1);
