@@ -240,9 +240,9 @@ input[type="reset"].default:not(:disabled):active {
         var(--border-raised-inner);
     color: var(--text) !important;
     text-shadow: none;
-    font-family: Tahoma, Arial, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
 	font-weight: normal; 
-    font-size: 11px;
+    font-size: 12px;
     font-weight: normal;
     line-height: normal;
     text-decoration: none !important;
