@@ -1,5 +1,6 @@
 :root {
-    --desktop-texture: url('../files/texture.gif');
+    --desktop-texture: url();
+    --desktop-color: #3a6ea5;
     --document-white: #ffffff;
     --text: #000000;
     --surface: #c0c0c0;
@@ -32,13 +33,29 @@
         inset 1px 1px var(--button-shadow);
 }
 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("files/ms_sans_serif.woff") format("woff");
+  src: url("files/ms_sans_serif.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("files/ms_sans_serif_bold.woff") format("woff");
+  src: url("files/ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html {
     min-height: 100%;
-    background: var(--desktop-texture) repeat scroll 0 0 #c0c0c0;
+    background: var(--desktop-color);
     scroll-behavior: smooth;
     overflow-y: scroll;
 }
@@ -128,61 +145,60 @@ input[type="reset"].default:not(:disabled):active {
 }
 
 .title-bar {
-  background: linear-gradient(
-    90deg,
-    var(--dialog-blue),
-    var(--dialog-blue-light)
-  );
-  padding: 3px 2px 3px 3px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	background: linear-gradient(
+		90deg,
+		var(--dialog-blue),
+		var(--dialog-blue-light)
+	);
+	padding: 3px 2px 3px 3px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .title-bar-text {
-  font-weight: bold;
-  color: white;
-  letter-spacing: 0;
-  margin-right: 24px;
-  font-family: Arial, sans-serif; 
-  font-size: 12px; 
+	color: white;
+	margin-right: 24px;
+	font-family: "Pixelated MS Sans Serif", Arial, sans-serif; 
+	font-weight: bold;
+	font-size: 11px; 
 }
 
 .title-bar-controls {
-  display: flex;
+	display: flex;
 }
 
 .title-bar-controls button {
-  padding: 0;
-  display: block;
-  min-width: 16px;
-  min-height: 14px;
+	padding: 0;
+	display: block;
+	min-width: 16px;
+	min-height: 14px;
 }
 
 .title-bar-controls button:focus {
-  outline: none;
+	outline: none;
 }
 
 .title-bar-controls button[aria-label="Minimize"],
 .title-bar-controls button[aria-label].minimize {
-  background-image: url("../files/minimize.svg");
-  background-repeat: no-repeat;
-  background-position: bottom 3px left 4px;
+	background-image: url("../files/minimize.svg");
+	background-repeat: no-repeat;
+	background-position: bottom 3px left 4px;
 }
 
 .title-bar-controls button[aria-label="Maximize"],
 .title-bar-controls button[aria-label].maximize {
-  background-image: url("../files/maximize.svg");
-  background-repeat: no-repeat;
-  background-position: top 2px left 3px;
+	background-image: url("../files/maximize.svg");
+	background-repeat: no-repeat;
+	background-position: top 2px left 3px;
 }
 
 .title-bar-controls button[aria-label="Close"],
 .title-bar-controls button[aria-label].close {
-  margin-left: 2px;
-  background-image: url("../files/close.svg");
-  background-repeat: no-repeat;
-  background-position: top 3px left 4px;
+	margin-left: 2px;
+	background-image: url("../files/close.svg");
+	background-repeat: no-repeat;
+	background-position: top 3px left 4px;
 }
 
 .sidebar {
@@ -204,8 +220,6 @@ input[type="reset"].default:not(:disabled):active {
     min-width: 0;
     overflow-x: auto;
     overflow-y: hidden;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
 }
 
 .nav_link,
@@ -226,8 +240,9 @@ input[type="reset"].default:not(:disabled):active {
         var(--border-raised-inner);
     color: var(--text) !important;
     text-shadow: none;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-family: Tahoma, Arial, Verdana, sans-serif;
+	font-weight: normal; 
+    font-size: 11px;
     font-weight: normal;
     line-height: normal;
     text-decoration: none !important;

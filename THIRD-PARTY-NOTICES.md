@@ -3,10 +3,20 @@ THIRD-PARTY NOTICES
 The following files are excluded from proprietary copyright claims and remain governed by their original license terms or public domain status: 
 
 ----------------------------------------------------------------------
-1. ../files/texture.gif
-   64x64px background tile 
-   Source: NASA Headquarters Public Affairs Office (https://web.archive.org/web/19970711085515im_/http://www.nasa.gov/hqpao/images/texture.gif) 
-   Status: Public domain U.S. government work (depicts no NASA insignia, seals, or logos). 
+1. 	../files/ms_sans_serif.woff
+	../files/ms_sans_serif.woff2
+	../files/ms_sans_serif_bold.woff
+	../files/ms_sans_serif_bold.woff2
+	Pixelated MS Sans Serif font face 
+	Project: 98.css
+	Author: Jordan Scales (jdan)
+	Source: https://github.com/jdan/98.css
+	Licence: MIT License 
+	The bold MS Sans Serif web font is sourced from the 98.css project, a CSS library for recreating classic Windows 98 user interfaces. Used under the MIT License. 
+	```Copyright 2020 Jordan Scales 
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.``` 
 
 ----------------------------------------------------------------------
 2. ../files/au.png, ../files/ee.png 
@@ -18,7 +28,7 @@ The following files are excluded from proprietary copyright claims and remain go
 ----------------------------------------------------------------------
 3. ../files/webamp.bundle.min.js 
    Project: Webamp (https://github.com/captbaritone/webamp) 
-   Copyright (c) 2015 Jordan Eldredge, with bundled sub-dependencies including classnames (Copyright (c) 2017 Jed Watson). 
+   Copyright © 2015 Jordan Eldredge, with bundled sub-dependencies including classnames (Copyright (c) 2017 Jed Watson). 
    License: MIT License (https://raw.githubusercontent.com/captbaritone/webamp/refs/heads/master/LICENSE.txt) 
 
 ----------------------------------------------------------------------
