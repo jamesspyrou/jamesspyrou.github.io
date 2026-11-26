@@ -308,6 +308,32 @@ input[type="reset"].default:not(:disabled):active {
     scrollbar-color: #c0c0c0 #eeeeee;
 }
 
+.main_tab::before {
+    content: "";
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 256px;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 40%,
+            rgba(255, 255, 255, 0.7) 75%,
+            #ffffff 100%
+        ),
+        url("files/clouds.jpg") center / cover no-repeat;
+}
+
+.main_tab > * {
+    position: relative;
+    z-index: 1;
+}
+
+
 .js .page {
     display: none;
 }
@@ -327,17 +353,10 @@ input[type="reset"].default:not(:disabled):active {
     font-weight: bold;
 }
 
-#info .subtitle {
-    font-size: 0.9em;
-}
-
-#info .location {
-    font-size: 0.9em;
-}
-
 #info .location img {
-    width: 1.15em;
     height: auto;
+	position: relative;
+    top: -1px;
     vertical-align: middle;
     image-rendering: pixelated; 
 }
