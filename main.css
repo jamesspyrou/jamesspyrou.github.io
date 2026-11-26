@@ -173,6 +173,7 @@ input[type="reset"].default:not(:disabled):active {
 	position: relative;
     top: 1px;
 	flex-shrink: 0;
+	image-rendering: pixelated; 
 }
 
 .title-bar-controls {
