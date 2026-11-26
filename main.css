@@ -449,7 +449,7 @@ input[type="reset"].default:not(:disabled):active {
         font-size: 0.85em;
     }
 
-    .nav_bar {
+    .sidebar {
         padding: 2px;
     }
 	
