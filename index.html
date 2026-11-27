@@ -371,10 +371,14 @@ function fitSubtitle() {
         const maxSize = 16;
         const minSize = 9;
 
+        if (window.innerWidth > 700) {
+            subtitle.style.fontSize = '';
+            return;
+        }
+
         subtitle.style.fontSize = maxSize + 'px';
 
         const availableWidth = container.clientWidth;
-
         let fontSize = maxSize;
 
         while (
@@ -386,9 +390,6 @@ function fitSubtitle() {
         }
     });
 }
-
-window.addEventListener('load', fitSubtitle);
-window.addEventListener('resize', fitSubtitle);
 </script>	
 	</body>
 </html>
