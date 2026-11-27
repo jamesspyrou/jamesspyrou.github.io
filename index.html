@@ -443,7 +443,7 @@ function fitSubtitle() {
 
     while (fontSize > minSize) {
         const overflowing = [...buttons].some(button =>
-            button.scrollWidth > button.clientWidth - 1
+            button.scrollWidth > button.clientWidth
         );
 
         if (!overflowing) break;
