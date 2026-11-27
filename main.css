@@ -468,17 +468,17 @@ input[type="reset"].default:not(:disabled):active {
 }
 
 .status-bar-field:first-child {
-    flex: 1 1 60%;
+    flex: 1 1 55%;
 }
 
 .status-bar-field:nth-child(2),
 .status-bar-field:nth-child(3),
 .status-bar-field:nth-child(4) {
-    flex: 2 1 3%;
+    flex: 2 1 4%;
 }
 
 .status-bar-field:last-child {
-    flex: 1 1 31%;
+    flex: 1 1 33%;
 }
 
 #status-back-to-top {
