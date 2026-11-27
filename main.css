@@ -604,6 +604,10 @@ input[type="reset"].default:not(:disabled):active {
         font-family: "Times New Roman", serif;
     }
 
+	#info .subtitle { 
+		font-size: 0.75em; 
+	}
+
     #info .location {
         font-size: 0.8em;
     }
