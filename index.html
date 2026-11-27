@@ -427,7 +427,7 @@
     function fitButtonText() {
         const buttons = document.querySelectorAll('.nav_tab a');
 
-        const maxSize = 12;
+        const maxSize = 11;
         const minSize = 8;
 
         if (window.innerWidth > 700) {
@@ -454,7 +454,7 @@
 
             if (!overflowing) break;
 
-            fontSize -= 0.5;
+            fontSize -= 0.25;
 
             buttons.forEach(button => {
                 button.style.fontSize = fontSize + 'px';
