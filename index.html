@@ -388,82 +388,79 @@
 
 })();
 		</script>				
-<script>
-	function fitMobileText() {
-    fitSubtitle();
-    fitButtonText();
-}
 
-window.addEventListener('load', fitMobileText);
-window.addEventListener('resize', fitMobileText); 
-	
-function fitSubtitle() {
-    document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
-        const container = subtitle.parentElement;
-        const maxSize = 14;
+<script>
+    function fitMobileText() {
+        fitSubtitle();
+        fitButtonText();
+    }
+
+    window.addEventListener('load', fitMobileText);
+    window.addEventListener('resize', fitMobileText);
+
+    function fitSubtitle() {
+        document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
+            const container = subtitle.parentElement;
+            const maxSize = 14;
+            const minSize = 8;
+
+            if (window.innerWidth > 700) {
+                subtitle.style.fontSize = '';
+                return;
+            }
+
+            let fontSize = maxSize;
+            subtitle.style.fontSize = fontSize + 'px';
+
+            const availableWidth = container.clientWidth - 2;
+
+            while (
+                subtitle.getBoundingClientRect().width > availableWidth &&
+                fontSize > minSize
+            ) {
+                fontSize -= 0.1;
+                subtitle.style.fontSize = fontSize + 'px';
+            }
+        });
+    }
+
+    function fitButtonText() {
+        const buttons = document.querySelectorAll('.nav_tab a');
+
+        const maxSize = 16;
         const minSize = 8;
 
         if (window.innerWidth > 700) {
-            subtitle.style.fontSize = '';
+            buttons.forEach(button => button.style.fontSize = '');
             return;
         }
 
-        subtitle.style.fontSize = maxSize + 'px';
-
-        const availableWidth = container.clientWidth - 2;
-
         let fontSize = maxSize;
 
-        while (
-            subtitle.getBoundingClientRect().width > availableWidth &&
-            fontSize > minSize
-        ) {
-            fontSize -= 0.1;
-            subtitle.style.fontSize = fontSize + 'px';
-        }
-    });
-}
-
-			function fitButtonText() {
-    const buttons = document.querySelectorAll('.nav_tab a');
-
-    const maxSize = 16;
-    const minSize = 8;
-
-    if (window.innerWidth > 700) {
-        buttons.forEach(button => button.style.fontSize = '');
-        return;
-    }
-
-    let fontSize = maxSize;
-
-    buttons.forEach(button => {
-        button.style.fontSize = maxSize + 'px';
-    });
-
-    while (fontSize > minSize) { 
-    const overflowing = [...buttons].some(button =>
-        button.scrollWidth > button.clientWidth
-    );
-
-    if (!overflowing) break;
-
-    fontSize -= 0.25;
-
-    buttons.forEach(button => {
-        button.style.fontSize = fontSize + 'px';
-    });
-		}
-
-        if (!overflowing) break;
-
-        fontSize -= 0.1;
-
         buttons.forEach(button => {
-            button.style.fontSize = fontSize + 'px';
+            button.style.fontSize = maxSize + 'px';
         });
+
+        while (fontSize > minSize) {
+            const overflowing = [...buttons].some(button => {
+                const range = document.createRange();
+                range.selectNodeContents(button);
+
+                const textWidth = range.getBoundingClientRect().width;
+                const availableWidth = button.clientWidth - 4;
+
+                return textWidth > availableWidth;
+            });
+
+            if (!overflowing) break;
+
+            fontSize -= 0.25;
+
+            buttons.forEach(button => {
+                button.style.fontSize = fontSize + 'px';
+            });
+        }
     }
-			}
-		</script>
+</script>
 	</body>
 </html>
