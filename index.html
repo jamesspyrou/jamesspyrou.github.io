@@ -363,6 +363,14 @@
 			});
 		</script>
 <script>
+	function fitMobileText() {
+    fitSubtitle();
+    fitButtonText();
+}
+
+window.addEventListener('load', fitMobileText);
+window.addEventListener('resize', fitMobileText); 
+	
 function fitSubtitle() {
     document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
         const container = subtitle.closest('#info');
@@ -390,8 +398,7 @@ function fitSubtitle() {
         }
     });
 }
-</script>	
-		<script>
+
 			function fitButtonText() {
     document.querySelectorAll('.nav_tab a').forEach(button => {
         const maxSize = 13;
