@@ -86,3 +86,16 @@ The following files are excluded from proprietary copyright claims and remain go
     /files/mailbox_world-2.png  
     /files/scienc_4-2.png  
 These are icons originating from the Microsoft Windows 98 operating system. They were obtained from the Windows Icons gallery maintained by Alex Meub. The icons remain the property of their respective copyrightholders. No claim of ownership over these assets is made. No explicit licence for their redistribution or reuse was identified.  
+
+----------------------------------------------------------------------
+9. /files/clouds.jpg  
+Windows 9x Clouds Background Remame  
+Author: BrianMatte  
+Source: https://www.deviantart.com/brianmatte/art/Windows-9x-Clouds-Remake-196472594  
+Original author's blog: https://brianmatte.blogspot.com/2011/02/windows-9x-clouds-remake.html  
+License: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0
+(CC BY-NC-ND 3.0). https://creativecommons.org/licenses/by-nc-nd/3.0/  
+Description: An original recreation of the Windows 9x "Clouds"
+desktop wallpaper, created from scratch using Microsoft's original
+wallpaper as a visual reference. The image is reproduced under the terms of the above license.
+
