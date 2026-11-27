@@ -442,9 +442,12 @@ function fitSubtitle() {
     });
 
     while (fontSize > minSize) {
-        const overflowing = [...buttons].some(button =>
-            button.scrollWidth > button.clientWidth
-        );
+        const overflowing = [...buttons].some(button => {
+    const text = button.getBoundingClientRect();
+    return button.scrollWidth > button.clientWidth ||
+           button.firstChild.getBoundingClientRect().right >
+           button.getBoundingClientRect().right - 2;
+});
 
         if (!overflowing) break;
 
