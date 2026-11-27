@@ -373,11 +373,9 @@ window.addEventListener('resize', fitMobileText);
 	
 function fitSubtitle() {
     document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
-        const container = subtitle.closest('#info');
-        if (!container) return;
-
-        const maxSize = 16;
-        const minSize = 9;
+        const container = subtitle.parentElement;
+        const maxSize = 12;
+        const minSize = 8;
 
         if (window.innerWidth > 700) {
             subtitle.style.fontSize = '';
@@ -387,6 +385,7 @@ function fitSubtitle() {
         subtitle.style.fontSize = maxSize + 'px';
 
         const availableWidth = container.clientWidth;
+
         let fontSize = maxSize;
 
         while (
