@@ -604,13 +604,15 @@ input[type="reset"].default:not(:disabled):active {
         font-family: "Times New Roman", serif;
     }
 
-    #info .subtitle {
-        font-size: 0.70em;
-    }
-
     #info .location {
         font-size: 0.8em;
     }
+
+	.subtitle {
+        display: inline-block;
+        white-space: nowrap;
+        max-width: 100%;
+	}
 
     .image-row {
         gap: 0.15em;
