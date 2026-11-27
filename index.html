@@ -391,5 +391,28 @@ function fitSubtitle() {
     });
 }
 </script>	
+		<script>
+			function fitButtonText() {
+    document.querySelectorAll('.nav_tab a').forEach(button => {
+        const maxSize = 13;
+        const minSize = 9;
+
+        if (window.innerWidth > 700) {
+            button.style.fontSize = '';
+            return;
+        }
+
+        button.style.fontSize = maxSize + 'px';
+
+        while (
+            button.scrollWidth > button.clientWidth &&
+            parseFloat(button.style.fontSize) > minSize
+        ) {
+            button.style.fontSize =
+                (parseFloat(button.style.fontSize) - 0.5) + 'px';
+        }
+    });
+			}
+		</script>
 	</body>
 </html>
