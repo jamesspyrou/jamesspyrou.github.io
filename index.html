@@ -399,25 +399,35 @@ function fitSubtitle() {
 }
 
 			function fitButtonText() {
-    document.querySelectorAll('.nav_tab a').forEach(button => {
-        const maxSize = 13;
-        const minSize = 9;
+    const buttons = document.querySelectorAll('.nav_tab a');
 
-        if (window.innerWidth > 700) {
-            button.style.fontSize = '';
-            return;
-        }
+    const maxSize = 16;
+    const minSize = 7;
 
+    if (window.innerWidth > 700) {
+        buttons.forEach(button => button.style.fontSize = '');
+        return;
+    }
+
+    let fontSize = maxSize;
+
+    buttons.forEach(button => {
         button.style.fontSize = maxSize + 'px';
-
-        while (
-            button.scrollWidth > button.clientWidth &&
-            parseFloat(button.style.fontSize) > minSize
-        ) {
-            button.style.fontSize =
-                (parseFloat(button.style.fontSize) - 0.5) + 'px';
-        }
     });
+
+    while (fontSize > minSize) {
+        const overflowing = [...buttons].some(button =>
+            button.scrollWidth > button.clientWidth
+        );
+
+        if (!overflowing) break;
+
+        fontSize -= 0.5;
+
+        buttons.forEach(button => {
+            button.style.fontSize = fontSize + 'px';
+        });
+    }
 			}
 		</script>
 	</body>
