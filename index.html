@@ -400,8 +400,8 @@ window.addEventListener('resize', fitMobileText);
 function fitSubtitle() {
     document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
         const container = subtitle.parentElement;
-        const maxSize = 12;
-        const minSize = 7;
+        const maxSize = 14;
+        const minSize = 8;
 
         if (window.innerWidth > 700) {
             subtitle.style.fontSize = '';
@@ -428,7 +428,7 @@ function fitSubtitle() {
     const buttons = document.querySelectorAll('.nav_tab a');
 
     const maxSize = 16;
-    const minSize = 7;
+    const minSize = 8;
 
     if (window.innerWidth > 700) {
         buttons.forEach(button => button.style.fontSize = '');
@@ -443,7 +443,7 @@ function fitSubtitle() {
 
     while (fontSize > minSize) {
         const overflowing = [...buttons].some(button =>
-            button.scrollWidth > button.clientWidth - 4
+            button.scrollWidth > button.clientWidth - 2
         );
 
         if (!overflowing) break;
