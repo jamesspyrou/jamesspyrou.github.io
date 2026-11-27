@@ -418,7 +418,7 @@ function fitSubtitle() {
             subtitle.getBoundingClientRect().width > availableWidth &&
             fontSize > minSize
         ) {
-            fontSize -= 0.5;
+            fontSize -= 0.1;
             subtitle.style.fontSize = fontSize + 'px';
         }
     });
@@ -443,12 +443,12 @@ function fitSubtitle() {
 
     while (fontSize > minSize) {
         const overflowing = [...buttons].some(button =>
-            button.scrollWidth > button.clientWidth
+            button.scrollWidth > button.clientWidth - 0.5
         );
 
         if (!overflowing) break;
 
-        fontSize -= 0.25;
+        fontSize -= 0.1;
 
         buttons.forEach(button => {
             button.style.fontSize = fontSize + 'px';
