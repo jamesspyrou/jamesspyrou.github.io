@@ -287,80 +287,107 @@
 			})();
 		</script>
 		<script>
-			(function () {
-				var DEFAULT = 'about';
-				var pages = Array.prototype.slice.call(document.querySelectorAll('.page[data-page]'));
-				var links = Array.prototype.slice.call(document.querySelectorAll('[data-link]'));
-				var pageTitle = document.getElementById('page-title');
-				var windowContent = document.getElementById('window-content');
-				var titles = {
-					about: 'About',
-					publications: 'Publications',
-					awards: 'Awards',
-					presentations: 'Presentations',
-					contact: 'Contact'
-				};
-				
-				function updateStatusTab() {
-					const currentPage = location.hash.substring(1) || "about";
-						const currentLink = document.querySelector(
-							`[data-link="${currentPage}"]`
-						);
+(function () {
+    var DEFAULT = 'about';
 
-					if (currentLink) {
-						document.getElementById("status-page-title").textContent =
-						currentLink.textContent.trim();
-					}
+    var pages = Array.prototype.slice.call(
+        document.querySelectorAll('.page[data-page]')
+    );
 
-					const titlebarIcon = document.getElementById("titlebar-icon");
-					const statusPageIcon = document.getElementById("status-page-icon");
+    var links = Array.prototype.slice.call(
+        document.querySelectorAll('[data-link]')
+    );
 
-					if (titlebarIcon && statusPageIcon) {
-						statusPageIcon.src = titlebarIcon.src;
-					}
-				};
+    var pageTitle = document.getElementById('page-title');
+    var windowContent = document.getElementById('window-content');
+    var titlebarIcon = document.getElementById('titlebar-icon');
+    var statusPageTitle = document.getElementById('status-page-title');
+    var statusPageIcon = document.getElementById('status-page-icon');
 
-				window.addEventListener("hashchange", updateStatusTab);
-				window.addEventListener("DOMContentLoaded", updateStatusTab);
+    var titles = {
+        about: 'About',
+        publications: 'Publications',
+        awards: 'Awards',
+        presentations: 'Presentations',
+        contact: 'Contact'
+    };
 
-				function showPage() {
-					var id = window.location.hash.slice(1);
-					var valid = pages.some(function (page) {
-						return page.getAttribute('data-page') === id;
-					});
-					if (!valid) id = DEFAULT;
+    function showPage() {
+        var id = window.location.hash.slice(1);
 
-					pages.forEach(function (page) {
-						var active = page.getAttribute('data-page') === id;
-						page.classList.toggle('active', active);
-						if (active) page.setAttribute('aria-current', 'page');
-						else page.removeAttribute('aria-current');
-					});
+        var valid = pages.some(function (page) {
+            return page.getAttribute('data-page') === id;
+        });
 
-					links.forEach(function (link) {
-						var active = link.getAttribute('data-link') === id;
-						link.className = active ? 'nav_link_active' : 'nav_link';
-						if (active) link.setAttribute('aria-current', 'page');
-						else link.removeAttribute('aria-current');
-					});
+        if (!valid) id = DEFAULT;
 
-					pageTitle.textContent = titles[id] || 'About';
-					document.title = 'James Spyrou - ' + (titles[id] || 'About');
-					if (windowContent) windowContent.scrollTop = 0;
-				}
+        // Show the selected page
+        pages.forEach(function (page) {
+            var active = page.getAttribute('data-page') === id;
 
-				var activeLink = document.querySelector(`[data-link="${id}"]`);
-var titlebarIcon = document.getElementById('titlebar-icon');
+            page.classList.toggle('active', active);
 
-if (activeLink && titlebarIcon) {
-    titlebarIcon.src = activeLink.dataset.icon;
-}
+            if (active) {
+                page.setAttribute('aria-current', 'page');
+            } else {
+                page.removeAttribute('aria-current');
+            }
+        });
 
-				window.addEventListener('hashchange', showPage);
-				showPage();
-				updateStatusTab();
-			})();
-		</script>
+        // Update navigation buttons
+        links.forEach(function (link) {
+            var active = link.getAttribute('data-link') === id;
+
+            link.className = active ? 'nav_link_active' : 'nav_link';
+
+            if (active) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+
+        // Update page titles
+        var title = titles[id] || 'About';
+
+        if (pageTitle) {
+            pageTitle.textContent = title;
+        }
+
+        document.title = 'James Spyrou - ' + title;
+
+        if (statusPageTitle) {
+            statusPageTitle.textContent = title;
+        }
+
+        // Update title-bar and status-bar icons
+        var activeLink = document.querySelector(
+            '[data-link="' + id + '"]'
+        );
+
+        if (activeLink && activeLink.dataset.icon && titlebarIcon) {
+            titlebarIcon.src = activeLink.dataset.icon;
+        }
+
+        if (titlebarIcon && statusPageIcon) {
+            statusPageIcon.src = titlebarIcon.src;
+        }
+
+        // Reset content scroll position
+        if (windowContent) {
+            windowContent.scrollTop = 0;
+        }
+    }
+
+    // Handle navigation and direct page refreshes
+    window.addEventListener('hashchange', showPage);
+    window.addEventListener('DOMContentLoaded', showPage);
+
+    // Initialise the correct page on load
+    showPage();
+
+})();
+		</script>				
 <script>
 	function fitMobileText() {
     fitSubtitle();
