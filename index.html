@@ -441,13 +441,19 @@ function fitSubtitle() {
         button.style.fontSize = maxSize + 'px';
     });
 
-    while (fontSize > minSize) {
-        const overflowing = [...buttons].some(button => {
-    const text = button.getBoundingClientRect();
-    return button.scrollWidth > button.clientWidth ||
-           button.firstChild.getBoundingClientRect().right >
-           button.getBoundingClientRect().right - 2;
-});
+    while (fontSize > minSize) { 
+    const overflowing = [...buttons].some(button =>
+        button.scrollWidth > button.clientWidth
+    );
+
+    if (!overflowing) break;
+
+    fontSize -= 0.25;
+
+    buttons.forEach(button => {
+        button.style.fontSize = fontSize + 'px';
+    });
+		}
 
         if (!overflowing) break;
 
