@@ -362,5 +362,33 @@
 				});
 			});
 		</script>
+<script>
+function fitSubtitle() {
+    document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
+        const container = subtitle.closest('#info');
+        if (!container) return;
+
+        const maxSize = 16;
+        const minSize = 9;
+
+        subtitle.style.fontSize = maxSize + 'px';
+
+        const availableWidth = container.clientWidth;
+
+        let fontSize = maxSize;
+
+        while (
+            subtitle.getBoundingClientRect().width > availableWidth &&
+            fontSize > minSize
+        ) {
+            fontSize -= 0.5;
+            subtitle.style.fontSize = fontSize + 'px';
+        }
+    });
+}
+
+window.addEventListener('load', fitSubtitle);
+window.addEventListener('resize', fitSubtitle);
+</script>	
 	</body>
 </html>
