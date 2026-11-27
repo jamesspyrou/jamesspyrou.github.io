@@ -349,18 +349,17 @@
 					if (windowContent) windowContent.scrollTop = 0;
 				}
 
+				var activeLink = document.querySelector(`[data-link="${id}"]`);
+var titlebarIcon = document.getElementById('titlebar-icon');
+
+if (activeLink && titlebarIcon) {
+    titlebarIcon.src = activeLink.dataset.icon;
+}
+
 				window.addEventListener('hashchange', showPage);
 				showPage();
+				updateStatusTab();
 			})();
-		</script>
-		<script>
-			const titlebarIcon = document.getElementById('titlebar-icon');
-			document.querySelectorAll('.nav_link, .nav_link_active')
-			.forEach(link => {
-				link.addEventListener('click', () => {
-					titlebarIcon.src = link.dataset.icon;
-				});
-			});
 		</script>
 <script>
 	function fitMobileText() {
