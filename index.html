@@ -375,7 +375,7 @@ function fitSubtitle() {
     document.querySelectorAll('.main_tab .subtitle').forEach(subtitle => {
         const container = subtitle.parentElement;
         const maxSize = 12;
-        const minSize = 8;
+        const minSize = 7;
 
         if (window.innerWidth > 700) {
             subtitle.style.fontSize = '';
@@ -384,7 +384,7 @@ function fitSubtitle() {
 
         subtitle.style.fontSize = maxSize + 'px';
 
-        const availableWidth = container.clientWidth;
+        const availableWidth = container.clientWidth - 8;
 
         let fontSize = maxSize;
 
