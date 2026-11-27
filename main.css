@@ -600,15 +600,15 @@ input[type="reset"].default:not(:disabled):active {
         font-size: 0.9em;
     }
 
-    #top .name {
+    #info .name {
         font-family: "Times New Roman", serif;
     }
 
-    #top .subtitle {
+    #info .subtitle {
         font-size: 0.70em;
     }
 
-    #top .location {
+    #info .location {
         font-size: 0.8em;
     }
 
