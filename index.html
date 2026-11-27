@@ -447,14 +447,14 @@
                 range.selectNodeContents(button);
 
                 const textWidth = range.getBoundingClientRect().width;
-                const availableWidth = button.clientWidth - 4;
+                const availableWidth = button.clientWidth;
 
                 return textWidth > availableWidth;
             });
 
             if (!overflowing) break;
 
-            fontSize -= 0.25;
+            fontSize -= 0.1;
 
             buttons.forEach(button => {
                 button.style.fontSize = fontSize + 'px';
