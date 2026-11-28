@@ -167,7 +167,7 @@
 			</main>
 			<div class="status-bar">
 				<div class="status-bar-field" id="status-back-to-top-field">
-					<a href="#top" id="status-back-to-top"><img id="status-back-to-top-icon" src="files/html_3.png" alt=""> Back to top</a>
+					<a href="#" id="status-back-to-top"><img id="status-back-to-top-icon" src="files/html_3.png" alt=""> Back to top</a>
 				</div>
 				<div class="status-bar-field"></div>
 				<div class="status-bar-field"></div>
@@ -285,8 +285,7 @@
 					if (webamp) close(); else open();
 				});
 			})();
-		</script>
-		<script>
+			
 (function () {
     var DEFAULT = 'about';
 
@@ -387,9 +386,16 @@
     showPage();
 
 })();
-		</script>				
 
-<script>
+document.getElementById('status-back-to-top').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+			
     function fitMobileText() {
         fitSubtitle();
         fitButtonText();
