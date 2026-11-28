@@ -483,6 +483,7 @@ input[type="reset"].default:not(:disabled):active {
 
 #status-back-to-top-field {
     white-space: nowrap;
+	display: inline-flex;
 }
 
 #status-back-to-top {
@@ -506,6 +507,7 @@ input[type="reset"].default:not(:disabled):active {
 
 #status-back-to-top-icon {
     display: inline-block;
+	flex-shrink: 0;
     width: 16px;
     height: 16px;
     vertical-align: middle;
